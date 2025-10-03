@@ -41,3 +41,5 @@ $$72^8-(3)(72)^3$$
 (e) How many 8-character passwords
 
 ---
+
+I AM DOING QUESTION 3.
