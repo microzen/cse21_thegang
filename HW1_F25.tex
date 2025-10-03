@@ -1,0 +1,162 @@
+
+\documentclass[10pt,letterpaper,unboxed,cm]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{enumerate, comment}
+\usepackage{adjustbox}
+\usepackage{amsmath,mathabx}
+
+\newcommand{\st}{~\mid~}
+\newcommand{\ind}{$~~~~~$}
+
+
+
+
+\begin{document}
+
+\hfill{CSE 21 Fall 2025}
+
+\hfill{Homework 1}
+
+\hfill{Due date: Monday, October 6 at 11:59pm}
+
+\begin{center}
+\begin{minipage}[t]{5.7in}
+\rule{\linewidth}{2pt}
+{\sc Instructions}\newline
+
+This homework should be done in {\bf groups} of one to four students, without assistance from anyone besides the instructional staff and your group members.  Homework must be submitted through Gradescope by a {\bf single representative} of your group and received by {\bf 11:59pm} on the due date.\\
+ 
+
+Students should consult their textbook, class notes, lecture slides, podcasts, group members, instructors, TAs, and tutors when 
+they need help with homework. You may ask questions about the homework in office hours, but questions on Piazza should be private, visible only to instructors. 
+
+This assignment will be graded for not only the \emph{correctness} of your answers, but on your ability to present your ideas clearly and logically. You should explain or justify, present clearly how you arrived at your conclusions and justify the correctness of your answers with mathematically sound reasoning (unless explicitly told not to). Whether you use formal proof techniques or write a more informal argument for why something is true, your answers should always be well-supported. Your goal should be to {\bf convince the reader} that your results and methods are sound.
+
+
+
+
+
+
+{\sc Key Concepts} Induction, Product Rule, Sum Rule, Power Rule, Permutations.
+
+(Note: For this homework, you can leave your answers in terms of exponentials, factorials, binomial coefficients, etc.)
+
+\rule{\linewidth}{2pt}
+\end{minipage} \hfill
+
+\end{center}
+
+\emph{(Note: for justifying counting arguments, a good rule of thumb is to explain how you came up with every term and factor of your answer. You can leave
+your answer in terms of exponentials rather than compute the exact numerical value.)}
+
+\begin{enumerate}
+
+\item
+\begin{enumerate}
+\item (6 points)
+Use regular induction to prove the following identity for all $n\geq 0$:
+
+$$\sum_{k=0}^n k2^k = (n-1)2^{n+1} + 2$$
+
+\item (6 points)
+Use regular induction to prove the following identity for all $n\geq 2$:
+
+$$\sum_{k=1}^n \left(1/\sqrt{k}\right) > \sqrt{n}$$
+\end{enumerate}
+
+
+\item
+A password is a string over the alphabet of 72 characters consisting of the 26 uppercase letters, the 26 lowercase letters, the 10 digits, and the 10 special characters: $\{!,@,\#,\$,\%,\&,?,+,=,-\}$. (\emph{2 points for correct expression and 2 points for justification})
+
+\begin{enumerate}
+
+
+\item
+(4 points)
+How many 8-character passwords have at least 2 letters (they can each be uppercase or lowercase)?
+
+\item
+(4 points)
+How many 8-character passwords avoids the word COUNT all in uppercase?
+
+
+\item
+(4 points)
+How many 8-character passwords consist of 4 different characters with 2 copies of one, 2 copies of another, 3 copies of another and a single copy of the last?
+
+\emph{Ex: Ag3Ag3a3, 12341244, aaAAbbbB...}
+
+\item
+(4 points)
+How many 8-character passwords have exactly 3 different special characters?
+
+\item
+(4 points)
+How many 8-character passwords consist of 8 different letters (they each can be uppercase or lowercase, but they must be different letters. For example, you cannot have AaBbCcDd but it is fine to have ZpxTaHwy.)?
+
+\end{enumerate}
+
+    \item (4 points each) For each expression, describe a set of objects that is counted by the expression and include your reasoning.
+
+For Example: Given the expression: $8*9^7$, here are a few sets that it could possibly count:
+
+\begin{itemize}
+\item
+The number of strings of digits of length 8 with exactly one occurrence of 0.
+\begin{quote}
+(Reasoning:) The factor $8$ tells us which position the 0 is in and the factor $9^7$ tells us the rest of the 7 positions using the remaining 9 digits.
+\end{quote}
+\item
+The number of strings of length 8 that start with a letter $\{A,B,C,D,E,F,G,H\}$ and end with 7 digits from 1 to 9.
+\begin{quote}
+(Reasoning:) The factor $8$ tells us which letter is in the first position and the factor $9^7$ tells us the rest of the 7 positions using the digits 1 to 9.
+\end{quote}
+\item
+The number of strings of digits of length 8 that start with a digit $\{0,1,2,3,4,5,6,7\}$ does not repeat the same digit in two consecutive positions
+\begin{quote}
+(Reasoning:) The factor $8$ tells us which digit is in the first position and the factor $9^7$ tells us each of the next 7 positions using the remaining 9 digits that are different than the digit before.
+\end{quote}
+\end{itemize}
+
+\begin{enumerate}
+\item
+
+$$26*8*10^7$$
+
+\item
+
+$$10^3(26 + 10)^{5}{8\choose 3}$$
+
+\item
+
+$$(26 + 10)^{8} - 26^8$$
+
+\item
+$$26^8 + 10^8 + 10^4*26^4$$
+\end{enumerate}
+
+\item
+(please include justification)
+\begin{enumerate}
+\item
+( 4 points)
+
+How many different ways are there to arrange the letters in the string UNITEDSTATES?
+\frac{12!}{3!\,2!\,2!}
+\item
+(4 points)
+
+
+How many different ways are there to color the 8 \emph{vertices} of a cube with 8 different colors?
+\frac{8!}{24}
+
+\item
+(4 points)
+
+How many different ways are there to make a necklace with 8 different colored beads (two necklaces are the same if you can manipulate one to look like the other.)
+\frac{8!}{16}
+
+\end{enumerate}
+\end{enumerate}
+\end{document}
