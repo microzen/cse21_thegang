@@ -46,12 +46,12 @@ $$(72)^8-(20)^3$$
 
 (e) How many 8-character passwords consist of 8 different letters (they cach can be uppercase or lowercase, but they must be different letters. For example, you cannot have AaBbCcDd but it is fine to have ZpxTaHwy.)?
 
-$$\dbinom{52}{1}\dbinom{8}{1}\dbinom{50}{1}\dbinom{7}{1}
-\dbinom{48}{1}\dbinom{6}{1}\dbinom{46}{1}\dbinom{5}{1}
-\dbinom{44}{1}\dbinom{4}{1}\dbinom{42}{1}\dbinom{3}{1}
-\dbinom{40}{1}\dbinom{2}{1}\dbinom{38}{1}\dbinom{1}{1}$$
+$$\dbinom{52}{1} \dbinom{8}{1} \dbinom{50}{1} \dbinom{7}{1} \dbinom{48}{1} \dbinom{6}{1} \dbinom{46}{1} \dbinom{5}{1} \dbinom{44}{1} \dbinom{4}{1} \dbinom{42}{1} \dbinom{3}{1} \dbinom{40}{1} \dbinom{2}{1} \dbinom{38}{1} \dbinom{1}{1}$$
+
 $$(8!)(\frac{52!!}{36!!})$$
+
 ---
+
 Question4: (please include justification)
 
 (a) (4 points)\
