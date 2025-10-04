@@ -62,3 +62,19 @@ Reason : all letter or digit strings of length 8 and take out the strings made o
 Answer : 8 character strings that all letters or all digits or have 4 digits and 4 letters positions.
 
 Reason : add all the counts
+Question4: (please include justification)
+
+(a) (4 points)\
+How many different ways are there to arrange the letters in the string UNITEDSTATES?
+
+$$\frac{12!}{3!\,2!\,2!}$$
+
+(b) (4 points)\
+How many different ways are there to color the 8 \emph{vertices} of a cube with 8 different colors?
+
+$$\frac{8!}{24}$$
+
+(c) (4 points)\
+How many different ways are there to make a necklace with 8 different colored beads (two necklaces are the same if you can manipulate one to look like the other.)
+
+$$\frac{8!}{16}$$
