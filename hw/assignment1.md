@@ -52,6 +52,9 @@ include your reasoning.
  Reason : choosing letter out of 26 ways, choosing position out of 8, then 7 positions reamins with any digit.
 
 (b) $$ 10^3(26+10)^5 \binom{8}{3} $$
+Answer : 8 character strings together with 3 digit only positions and 5 of any letter or digits.
+
+Reason : choosing the 3 on digit only position out of 8 and put any digits in those positions and fill remaining position with any letters or digits.
 
 (c) $$ (26 + 10)^8 - 26^8 $$
 Answer : 8 character strings that have at least one digit.
