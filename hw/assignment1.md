@@ -42,4 +42,23 @@ $$72^8-(3)(72)^3$$
 
 ---
 
-I AM DOING QUESTION 3.
+QUESTION 3
+For each expression, describe a set of objects that is counted by the expression and
+include your reasoning.
+
+(a) $$ 26 * 8 * 10^7 $$
+ Answer : 8 character string with excatly one letter and 7 digits.
+ 
+ Reason : choosing letter out of 26 ways, choosing position out of 8, then 7 positions reamins with any digit.
+
+(b) $$ 10^3(26+10)^5 \binom{8}{3} $$
+
+(c) $$ (26 + 10)^8 - 26^8 $$
+Answer : 8 character strings that have at least one digit.
+
+Reason : all letter or digit strings of length 8 and take out the strings made of letters only.
+
+(d) $$ 26^8 + 10^8 + 10^4 * 26^4 $$
+Answer : 8 character strings that all letters or all digits or have 4 digits and 4 letters positions.
+
+Reason : add all the counts
