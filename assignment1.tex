@@ -1,0 +1,311 @@
+
+\documentclass[10pt,letterpaper,unboxed,cm]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{enumerate, comment}
+\usepackage{adjustbox}
+\usepackage{amsmath,mathabx}
+
+\newcommand{\st}{~\mid~}
+\newcommand{\ind}{$~~~~~$}
+
+
+
+
+\begin{document}
+
+\begin{center}
+{\LARGE CSE 21: Math/Algorithms \& Systems Analysis}\\
+{\Large Assignment 1}\\
+{\large Due: Friday, September 8, 2023 at 11:59pm}
+\end{center}
+\emph{(Note: for justifying counting arguments, a good rule of thumb is to explain how you came up with every term and factor of your answer. You can leave
+your answer in terms of exponentials rather than compute the exact numerical value.)}
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item (6 points)
+Use regular induction to prove the following identity for all $n\geq 0$:
+
+$$\sum_{k=0}^n k2^k = (n-1)2^{n+1} + 2$$
+
+Proof:
+\begin{enumerate}
+    \item Claim: $\sum_{k=0}^{n} k2^k = (n-1)2^{n+1} + 2$ for all integers $n \geq 0$
+    \item Base Case: $n=0$
+    \begin{align*}
+        \sum_{k=0}^{1} k2^k = 0*2^0 + 1*2^1 = 2\\
+        (1 - 1)2^{1+1} + 2 = 0*2^2 + 2 = 2
+    \end{align*}
+    Both sides of the equation holds the equality when $n = 0$
+    \item Induction Hypothesis:
+    
+    
+    Assume the following expression for some integer $r \geq 0$
+    $$
+    \sum_{k = 0}^{r} k2^k = (r-1)2^{r+1} + 2
+    $$
+    \item Induction Step:
+
+    
+    Start from $\sum_{k=0}^{n+1}k2^k = (n+1-1)2^{n+1+1}+2$,
+    \begin{align*}
+        \sum_{k=0}^{r+1}k2^k = (r+1-1)2^{r+1+1}+2 \\
+        (r+1)2^{r+1} + \sum_{k=0}^r k2^k = 2^{r+2} + 2(r-1)2^{r+1} + 2
+    \end{align*}
+    Since by the Induction Hypothesis we know that
+    $$\sum_{k=0}^{n}k2^k = (n-1)2^{n+1}+2$$
+    Then we can cancel the 2 terms on both sides and simplify as the following:
+    \begin{align*}
+        (r+1)2^{r+1} = (r-1)2^{r+1}+2^{r+2} \\
+        r2^{r+1} + 2^{r+1} = r2^{r+1} - 2^{r+1} + 2^{r+2} \\
+        2^{r+1} = -2^{r+1}+2*2^{r+1} \\
+        2^{r+1} = (-1 + 2)2^{r+1} \\
+        2^{r+1} = 2^{r+1}
+    \end{align*}
+    Which both sides of the equality are the same for any integer value $r \geq 0$
+    \item Conclusion:
+
+    
+    Since our claim holds for $n=0$ and 
+    $$\sum_{k = 0}^{r} k2^k = (r-1)2^{r+1} + 2 \xrightarrow{} \sum_{k=0}^{r+1}k2^k = (r+1-1)2^{r+1+1}+2$$
+    for $n \geq 0$, by induction, 
+    $$\sum_{k = 0}^{r} k2^k = (r-1)2^{r+1} + 2$$
+    for all integers $n \geq 0$
+
+    
+\end{enumerate}
+
+\item (6 points)
+Use regular induction to prove the following identity for all $n\geq 2$:
+
+$$\sum_{k=1}^n \left(1/\sqrt{k}\right) > \sqrt{n}$$
+
+Proof:
+\begin{enumerate}
+\item Claim: 
+$$
+\sum_{k=1}^{n}(\frac{1}{\sqrt{k}}) > \sqrt{n}
+$$
+\item Base Case: $n = 2$
+\begin{align*}
+    \sum_{k=1}^{2}(\frac{1}{\sqrt{k}}) >\sqrt{2}\\
+    \frac{1}{\sqrt{1}} + \frac{1}{\sqrt{2}} = \sqrt{2}
+\end{align*}
+Since the $\frac{1}{\sqrt{2}}$ is a positive number, it is valid to subtract $\frac{1}{\sqrt{2}}$ on both sides without switching the inequality.
+\begin{align*}
+    1 > \sqrt{2}-\frac{1}{\sqrt{2}}\\
+    \sqrt{2} > 2 - 1\\
+    \sqrt{2} > 1\\
+    1.41... > 1
+\end{align*}
+The inequality holds when $n = 2$
+\item Induction Hypothesis:
+
+Assume the following expression for some integer $r \geq 2$
+$$
+    \sum_{k=1}^{r}(\frac{1}{\sqrt{k}}) > \sqrt{r}
+$$
+\item Induction Step:
+
+
+Start from $\sum_{k=1}^{r+1}(\frac{1}{\sqrt{k}}) > \sqrt{r+1}$,
+\begin{align*}
+    \sum_{k=1}^{r+1}(\frac{1}{\sqrt{k}}) > \sqrt{r+1}\\
+    \frac{1}{\sqrt{r+1}}+\sum_{k=1}^{r}(\frac{1}{\sqrt{k}}) > \sqrt{r+1}
+\end{align*}
+Since by the Induction Hypothesis we know that
+$$
+\sum_{k=1}^{r}(\frac{1}{\sqrt{k}}) > \sqrt{r}
+$$
+If we can prove $\frac{1}{\sqrt{r+1}}+\sqrt{r} > \sqrt{r+1}$ is valid, then this expression $\frac{1}{\sqrt{r+1}}+\sum_{k=1}^{r}(\frac{1}{\sqrt{k}}) > \sqrt{r+1}$ must also be true
+Therefore we can replace the $\sum_{k=1}^{r}(\frac{1}{\sqrt{k}})$ with $\sqrt{r}$ and continue the proof.
+\begin{align*}
+    \frac{1}{\sqrt{r+1}} + \sqrt{r} > \sqrt{r+1}\\
+    \frac{1}{\sqrt{r+1}} + \frac{\sqrt{r}\sqrt{r+1}}{\sqrt{r+1}} > \sqrt{r+1}\\
+    \frac{1 + \sqrt{r}\sqrt{r+1}}{\sqrt{r+1}} > \sqrt{r+1}\\
+\end{align*}
+We can multiply both sides with $\sqrt{r+1}$ under the condition that $r \geq 2$ as it is always a positive number, therefore the inequality sign will not be flipped.
+\begin{align*}
+    1+\sqrt{r}\sqrt{r+1} > r+1\\
+    \sqrt{r}\sqrt{r+1} > r\\
+    \sqrt{r^2+r} > r\\
+    r\sqrt{1+\frac{1}{r}} > r
+\end{align*}
+Under the condition of $r \geq 2$, r is always a non-zero positive integer, therefore we can divide both side of the inequality without flipping the inequality sign
+\begin{align*}
+    \sqrt{1+\frac{1}{r}} > 1
+\end{align*}
+Since $\sqrt{1 + \frac{1}{r}}$ and $1$ are both $\geq 1$, it is valid to square both sides of the inequality without effecting the inequality sign
+\begin{align*}
+    (\sqrt{1 + \frac{1}{r}})^2 > (1)^2\\
+    1+\frac{1}{r} > 1
+\end{align*}
+Under the condition that $r \geq 2$, $\frac{1}{r} >0$, Which $1 + \text{x} > 1$ where $x$ is any number that is greater than 0
+\item Conclusion:
+
+Since our claim holds for $n = 2$ and 
+$$
+    \sum_{k=1}^{r}(\frac{1}{\sqrt{k}}) > \sqrt{r} \rightarrow{}\sum_{k=1}^{r+1}(\frac{1}{\sqrt{k}}) > \sqrt{r+1}
+$$
+for any $r \geq 2$
+By induction,
+$$
+    \sum_{k=1}^{n}(\frac{1}{\sqrt{k}}) > \sqrt{n}
+$$
+for all $n \geq 2$.
+\end{enumerate}
+
+
+\item
+A password is a string over the alphabet of 72 characters consisting of the 26 uppercase letters, the 26 lowercase letters, the 10 digits, and the 10 special characters: $\{!,@,\#,\$,\%,\&,?,+,=,-\}$. (\emph{2 points for correct expression and 2 points for justification})
+
+\begin{enumerate}
+
+
+\item
+(4 points)
+How many 8-character passwords have at least 2 letters (they can each be uppercase or lowercase)?
+$$
+    72^8-20^8-(\binom{8}{1}52*20^7)
+$$
+Explanation:
+\begin{itemize}
+    \item $72^8$: represents all possible password combinations possible
+    \item $20^8$: represents the possible password combinations with no letters (uppercase or lowercase)
+    \item To represent the possible password combinations with only 1 letter (uppercase or lowercase):
+    \begin{itemize}
+        \item $\binom{8}{1}$: of the 8 positions of the password, which one will contain the letter
+        \item $52$: of the 52 possible letters (uppercase and lowercase), which one will be the letter included in the password
+        \item $20^7$: represents all the rest of the positions filled without any letters
+    \end{itemize}
+\end{itemize}
+Since the possibilities are composed of
+\begin{align*}
+\underbrace{\text{total amount of possible passwords}}_{72^8} = \underbrace{\text{passwords without a letter}}_{20^8}\\ 
++ \\
+\underbrace{\text{passwords with only 1 uppercase or lowercase letter}}_{\binom{8}{1}*52*20^7}\\ 
++ \\
+\underbrace{\text{passwords with at least 2 uppercase or lowercase letters}}_{\text{Result}}
+\end{align*}
+we can find the possible 8-character passwords with at least 2 letters (uppercase or lowercase) by subtracting the total count by the number of possible combinations with $\leq 1$ letter in the password.
+
+\item
+(4 points)
+How many 8-character passwords avoids the word COUNT all in uppercase?
+$$
+72^8-(4*72^3)
+$$
+Explanation:
+\begin{itemize}
+    \item $72^8$: represents all possible password combinations possible
+    \item To represent the possible combinations with the word "COUNT" in all uppercase letters included within the password
+    \begin{itemize}
+        \item $4$: represents the 4 possible positions where the word "COUNT" can be placed
+        \item $72^3$: represents the possible values that can be placed in the remaining 3 slots
+    \end{itemize}
+\end{itemize}
+Since the possibilities are composed of 
+\begin{align*}
+    \underbrace{\text{total amount of possible passwords}}_{72^8} = \underbrace{\text{passwords with the combination "COUNT" within the password}}_{4*72^3}\\ 
+    + \\
+    \underbrace{\text{passwords without the word "COUNT"}}_{\text{result}}
+\end{align*}
+We can find the possible 8-character passwords without the word "COUNT" in all uppercase letters by subtracting the total count by the number of possible passwords including the word "COUNT" in all uppercase.
+
+\item
+(4 points)
+How many 8-character passwords consist of 4 different characters with 2 copies of one, 2 copies of another, 3 copies of another and a single copy of the last?
+$$
+    \binom{72}{4}\binom{4}{1}\binom{8}{3}\binom{3}{2}\binom{5}{2}\binom{3}{2}\binom{1}{1}\binom{1}{1}
+$$
+Explanation:
+\begin{itemize}
+    \item $\binom{72}{4}$: choosing 4 characters out of the 72 possible characters
+    \item $\binom{4}{1}$: choosing 1 character out of the 4 to be the character copied for 3 times
+    \item $\binom{8}{3}$: choosing 3 slots out of the 8 slots to put the character that has been duplicated 3 times
+    \item $\binom{3}{2}$: choosing 2 character out of the remaining 3 to be the character to be copied 2 times, the remaining character is by default the characters that is unique
+    \item $\binom{5}{2}$: choosing 2 slots out of the 5 remaining to place one of the characters copied 2 times
+    \item $\binom{3}{2}$: choosing 2 slots out of the 3 remaining to place the other character that has been copied 2 times
+    \item The first $\binom{1}{1}$: choosing 1 character out of the remaining 1 to be the unique character
+    \item The second $\binom{1}{1}$: choosing 1 slot out of the 1 remaining to place the last character
+\end{itemize}
+
+
+\emph{Ex: Ag3Ag3a3, 12341244, aaAAbbbB...}
+
+\item
+(4 points)
+How many 8-character passwords have exactly 3 different special characters?
+$$
+    P(10,3)*62^5 
+$$
+\item
+(4 points)
+How many 8-character passwords consist of 8 different letters (they each can be uppercase or lowercase, but they must be different letters. For example, you cannot have AaBbCcDd but it is fine to have ZpxTaHwy.)?
+
+\end{enumerate}
+
+    \item (4 points each) For each expression, describe a set of objects that is counted by the expression and include your reasoning.
+
+For Example: Given the expression: $8*9^7$, here are a few sets that it could possibly count:
+
+\begin{itemize}
+\item
+The number of strings of digits of length 8 with exactly one occurrence of 0.
+\begin{quote}
+(Reasoning:) The factor $8$ tells us which position the 0 is in and the factor $9^7$ tells us the rest of the 7 positions using the remaining 9 digits.
+\end{quote}
+\item
+The number of strings of length 8 that start with a letter $\{A,B,C,D,E,F,G,H\}$ and end with 7 digits from 1 to 9.
+\begin{quote}
+(Reasoning:) The factor $8$ tells us which letter is in the first position and the factor $9^7$ tells us the rest of the 7 positions using the digits 1 to 9.
+\end{quote}
+\item
+The number of strings of digits of length 8 that start with a digit $\{0,1,2,3,4,5,6,7\}$ does not repeat the same digit in two consecutive positions
+\begin{quote}
+(Reasoning:) The factor $8$ tells us which digit is in the first position and the factor $9^7$ tells us each of the next 7 positions using the remaining 9 digits that are different than the digit before.
+\end{quote}
+\end{itemize}
+
+\begin{enumerate}
+\item
+
+$$26*8*10^7$$
+
+\item
+
+$$10^3(26 + 10)^{5}{8\choose 3}$$
+
+\item
+
+$$(26 + 10)^{8} - 26^8$$
+
+\item
+$$26^8 + 10^8 + 10^4*26^4$$
+\end{enumerate}
+
+\item
+(please include justification)
+\begin{enumerate}
+\item
+( 4 points)
+
+How many different ways are there to arrange the letters in the string UNITEDSTATES?
+\item
+(4 points)
+
+How many different ways are there to color the 8 \emph{vertices} of a cube with 8 different colors?
+
+
+\item
+(4 points)
+
+How many different ways are there to make a necklace with 8 different colored beads (two necklaces are the same if you can manipulate one to look like the other.)
+
+
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\end{document}
