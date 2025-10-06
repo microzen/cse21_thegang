@@ -124,24 +124,59 @@ $$72^8 - (52)(20)^7 - (20)^8$$
 
 (b) How many 8-character passwords avoids the word COUNT all in uppercase?
 
-$$72^8-(3)(72)^3$$
+Total is $72^8$, now, there are four different cases with the word **COUNT**: COUNTxxx, xCOUNTxx, xxCOUNTx, and xxxCOUNT.
+
+So the answer is: $\text{Total } - \text{ four cases }\times \text{ 72 latters in 3 speace}$
+
+$$72^8-(4)(72)^3$$
 
 (c) How many 8-character passwords consist of 4 different characters with 2 copies of one, 2 copies of another, 3 copies of another, and a sigle copy of the last?
 
+First, choose 4 different characters from all characters:
 
-$$\dbinom{72}{2}\dbinom{4}{1}\dbinom{8}{2}\dbinom{3}{1}\dbinom{6}{2}\dbinom{2}{1}\dbinom{4}{3}\dbinom{1}{1}\dbinom{1}{1}$$
+$$\dbinom{72}{4}$$
+
+Then, choose 1 characters from the picked 4, and make 2 copies for two speaces of 8-character:
+
+$$\dbinom{4}{1}\dbinom{8}{2}$$
+
+choose 1 characters from the remain 3, and make 2 copies for two speaces of 8-character:
+
+$$\dbinom{3}{1}\dbinom{6}{2}$$
+
+choose 1 characters from the remain 2, and make 3 copies for three speaces of 8-character:
+
+$$\dbinom{2}{1}\dbinom{4}{3}$$
+
+choose 1 characters from the last one, and sigle copy for the last speaces of 8-character:
+
+$$\dbinom{1}{1}\dbinom{1}{1}$$
+
+Then, the answer is:
+
+$$\dbinom{72}{4}\dbinom{4}{1}\dbinom{8}{2}\dbinom{3}{1}\dbinom{6}{2}\dbinom{2}{1}\dbinom{4}{3}\dbinom{1}{1}\dbinom{1}{1}$$
 
 
 (d) How many 8-character passwords have exactly 3 different special characters?
 
-$$(72)^8-(20)^3$$
+We need exactly 3 different special characters. Therefore, take 3 different from 10 special characters. Also, 5 without special characters.
+
+$$\dbinom{10}{3}\dbinom{8}{3}+(72-10)^7$$
+
+So, the answer is:
+
+$$\dbinom{10}{3}\dbinom{8}{3}+(62)^7$$
 
 
 (e) How many 8-character passwords consist of 8 different letters (they cach can be uppercase or lowercase, but they must be different letters. For example, you cannot have AaBbCcDd but it is fine to have ZpxTaHwy.)?
 
-$$\dbinom{52}{1} \dbinom{8}{1} \dbinom{50}{1} \dbinom{7}{1} \dbinom{48}{1} \dbinom{6}{1} \dbinom{46}{1} \dbinom{5}{1} \dbinom{44}{1} \dbinom{4}{1} \dbinom{42}{1} \dbinom{3}{1} \dbinom{40}{1} \dbinom{2}{1} \dbinom{38}{1} \dbinom{1}{1}$$
+First, we pick 1 from 52, then pick 1 from 50, then pick 1 from 48 ..... pick 1 from 38.
 
-$$(8!)(\frac{52!!}{36!!})$$
+Therefor, we got
+
+$$(52)\times(50)\times(48)\times\dots\times(38)$$
+$$=2(26)(25)(24)(23)(22)(21)(20)(19)$$
+$$=2\times\frac{26!}{18!}$$
 
 ---
 
@@ -149,25 +184,33 @@ $$(8!)(\frac{52!!}{36!!})$$
 For each expression, describe a set of objects that is counted by the expression and include your reasoning.
 
 (a)
-$$ 26 * 8 * 10^7 $$
+
+$$26 * 8 * 10^7$$
 
  Answer : 8 character string with excatly one lowercase letter and 7 digits.
  
  Reason : choosing lowercase letter out of 26 ways, choosing its position out of 8 positions, then 7 remaining position with any digit from 0-9.
 
-(b) $$ 10^3(26+10)^5 \binom{8}{3} $$
+(b) 
+
+$$10^3(26+10)^5 \binom{8}{3}$$
+
 Answer : number of 8 character strings  with 3 digit only positions and 5 of any lowercase letter or digits positions.
 
 Reason : choosing 3 digit only position out of 8 and put any digits in those positions and fill remaining position with any letters or digits. 8C3 is for choosing 3 positions for digits out of 8 positions.
 
 (c) 
-$$ (26 + 10)^8 - 26^8 $$
+
+$$(26 + 10)^8 - 26^8$$
+
 Answer : 8 character lowercase string that have at least one digit.
 
 Reason : Sum of all lowercase letters or digit strings of length 8 and take out the strings made of lowercase letters only.
 
 (d) 
-$$ 26^8 + 10^8 + 10^4 * 26^4 $$
+
+$$26^8 + 10^8 + 10^4 * 26^4$$
+
 Answer : 8 character strings that are all lowercase letters or all digits or starts with 4 digits and ends with 4 lowercase letters posion.
 
 Reason : add all the counts. $26^8$ is all lowercase letters only password, $10^8$ is all digits only passwords, and the last addend is for all that starts with 4 digits and ends with 4 lowercase letters posion.
