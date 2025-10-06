@@ -1,4 +1,4 @@
-
+$$
 \documentclass[10pt,letterpaper,unboxed,cm]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
@@ -412,3 +412,4 @@ $$
 \end{enumerate}
 \end{enumerate}
 \end{document}
+$$
