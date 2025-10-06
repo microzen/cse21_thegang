@@ -40,10 +40,12 @@ $\text{Then all that is left is to check if}$
 $$(m+1)\cdot2^{m+1} = 2^{m+1} + m\cdot2^{m+1}\\\hspace{67px}\leftrightarrow (m+1)\cdot2^{m+1} = (m+1)\cdot2^{m+1} \textbf{ (True)}$$
 
 $\text{Conclusion:}$
-$$\text{Since our claim holds for n = 0 and } \sum_{k=0}^{m} k\cdot2^k = (m-1)\cdot2^{m+1} + 2 $$
+
+$$\text{Since our claim holds for n = 0 and } \sum_{k=0}^{m} k\cdot2^k = (m-1)\cdot2^{m+1} + 2$$
+
 $$ \rightarrow \sum_{m=0}^{m+1} k\cdot2^k = (m-1+1)\cdot2^{m+1+1}+2 \text{ for } m\ge 0$$
 
-$$\text{By induction, }\displaystyle\sum_{k=0}^{n} k\cdot2^k = (n-1)\cdot2^{n+1} + 2 \text{ for all integers } n \ge 0 $$
+$$\text{By induction, }\displaystyle\sum_{k=0}^{n} k\cdot2^k = (n-1)\cdot2^{n+1} + 2 \text{ for all integers } n \ge 0$$
 
 ### Question 1. (b)
 Use regular induction to prove the following identiy for all $n \ge 2$:
@@ -112,7 +114,7 @@ $\text{By induction, }\displaystyle\sum_{k=1}^{n} \left(\frac{1}{\sqrt k} \right
 
 
 ---
-### Question2: 
+### Question 2: 
 A password is a string over the alphabet of 72 characters consisting of the 26 uppercase letters, the 26 lowercase letters, the 10 digits, and the 10 special characters: {!,@,#,$,%,&,*,?,+,=,-} (*2 points for correct expression and 2 points for justiﬁcation*)
 
 (a) How many 8-character passwords have at least 2 letters (they can each be uppercase or lower case)?
