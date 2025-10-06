@@ -3,6 +3,8 @@
 Contributors:
 - Yezhi Wu, yew020@ucsd.edu
 - Andrew Le, aal034@ucsd.edu
+- Theo Lee, thl030@ucsd.edu
+- Woosik Kim, wok017@ucsd.edu
 
 Due: October 6 2025
 
@@ -163,11 +165,11 @@ $$\dbinom{72}{4}\dbinom{4}{1}\dbinom{8}{2}\dbinom{3}{1}\dbinom{6}{2}\dbinom{2}{1
 
 We need exactly 3 different special characters. Therefore, take 3 different from 10 special characters. Also, 5 without special characters.
 
-$$\dbinom{10}{3}\dbinom{8}{3}+(72-10)^7$$
+$$\dbinom{10}{3}\dbinom{8}{3}(72-10)^7$$
 
 So, the answer is:
 
-$$\dbinom{10}{3}\dbinom{8}{3}+(62)^7$$
+$$\dbinom{10}{3}\dbinom{8}{3}(62)^7$$
 
 
 (e) How many 8-character passwords consist of 8 different letters (they cach can be uppercase or lowercase, but they must be different letters. For example, you cannot have AaBbCcDd but it is fine to have ZpxTaHwy.)?
