@@ -37,7 +37,7 @@ $$\sum_{k=0}^{m} k\cdot2^k = (m-1)\cdot2^{m+1} + 2$$
 
 $\text{Then all that is left is to check if}$ 
 
-$$(m+1)\cdot2^{m+1} = 2^{m+1} + m\cdot2^{m+1}\\\hspace{67px}\leftrightarrow (m+1)\cdot2^{m+1} = (m+1)\cdot2^{m+1} \textbf{ (True)}$$
+$$(m+1)\cdot2^{m+1} = 2^{m+1} + m\cdot2^{m+1}\leftrightarrow (m+1)\cdot2^{m+1} = (m+1)\cdot2^{m+1}\ \textbf{(True)}$$
 
 $\text{Conclusion:}$
 
