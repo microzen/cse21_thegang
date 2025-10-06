@@ -29,7 +29,7 @@ $$\text{Start from } \sum_{k=0}^{m+1} k\cdot2^k = (m-1+1)\cdot2^{m+1+1}+2 $$
 
 $$\sum_{k=0}^{m} k\cdot2^k + (m+1)2^{m+1} = m\cdot2^{m+2} + 2 $$
 
-$$\lrArr \sum_{k=0}^{m} k\cdot2^k + (m+1)2^{m+1} = (m-1)\cdot2^{m+1} + 2^{m+1} + m\cdot2^{m+1} + 2$$
+$$\leftrightarrow \sum_{k=0}^{m} k\cdot2^k + (m+1)2^{m+1} = (m-1)\cdot2^{m+1} + 2^{m+1} + m\cdot2^{m+1} + 2$$
 
 $\text{Since by the IH we know that}$
 
@@ -37,12 +37,10 @@ $$\sum_{k=0}^{m} k\cdot2^k = (m-1)\cdot2^{m+1} + 2$$
 
 $\text{Then all that is left is to check if}$ 
 
-$$(m+1)\cdot2^{m+1} = 2^{m+1} + m\cdot2^{m+1}\\\hspace{67px}\lrArr (m+1)\cdot2^{m+1} = (m+1)\cdot2^{m+1} \hspace{120px}\textbf{(True)}$$
+$$(m+1)\cdot2^{m+1} = 2^{m+1} + m\cdot2^{m+1}\\\hspace{67px}\leftrightarrow (m+1)\cdot2^{m+1} = (m+1)\cdot2^{m+1} \textbf{ (True)}$$
 
 $\text{Conclusion:}$
-
-$$\text{Since our claim holds for n = 0 and } \sum_{k=0}^{m} k\cdot2^k = (m-1)\cdot2^{m+1} + 2 $$ 
-
+$$\text{Since our claim holds for n = 0 and } \sum_{k=0}^{m} k\cdot2^k = (m-1)\cdot2^{m+1} + 2 $$
 $$ \rightarrow \sum_{m=0}^{m+1} k\cdot2^k = (m-1+1)\cdot2^{m+1+1}+2 \text{ for } m\ge 0$$
 
 $$\text{By induction, }\displaystyle\sum_{k=0}^{n} k\cdot2^k = (n-1)\cdot2^{n+1} + 2 \text{ for all integers } n \ge 0 $$
@@ -58,13 +56,13 @@ $\text{Base case: } n = 2$
 
 $$\sum_{k=1}^{2} \left(\frac{1}{\sqrt k}\right) \gt{\sqrt 2}$$
 
-$$\lrArr1+\frac{1}{\sqrt2}>\sqrt2$$
+$$\leftrightarrow1+\frac{1}{\sqrt2}>\sqrt2$$
 
-$$\lrArr 1>\sqrt{2} - \frac {1}{\sqrt{2}} = \frac{2-1}{\sqrt2}=\frac{1}{\sqrt2} $$
+$$\leftrightarrow 1>\sqrt{2} - \frac {1}{\sqrt{2}} = \frac{2-1}{\sqrt2}=\frac{1}{\sqrt2} $$
 
-$$\lrArr 1\gt\sqrt2-\frac{1}{\sqrt2}=\frac{2-1}{\sqrt2}=\frac{1}{\sqrt2}$$
+$$\leftrightarrow 1\gt\sqrt2-\frac{1}{\sqrt2}=\frac{2-1}{\sqrt2}=\frac{1}{\sqrt2}$$
 
-$$\lrArr\sqrt2\gt1\hspace{61px}\textbf{(True)}$$
+$$\leftrightarrow\sqrt2\gt1\hspace{61px}\textbf{(True)}$$
 
 $\text{Induction Hypothesis:}$
 
@@ -88,15 +86,15 @@ $\text{Then all that is left to check if}$
 
 $${\sqrt{m}}+\frac{1}{\sqrt{m+1}}\gt\sqrt{m+1}$$
 
-$$\lrArr\frac{\sqrt{m(m+1)}+1}{\sqrt{m+1}}\gt\sqrt{m+1}$$
+$$\leftrightarrow\frac{\sqrt{m(m+1)}+1}{\sqrt{m+1}}\gt\sqrt{m+1}$$
 
 $\text{Since}\sqrt{m(m+1)}+1\gt0\text{ and }\sqrt{m+1}>0\text{,}$
 
 $$\sqrt{m(m+1)}+1\gt\text{m+1}$$
 
-$$\lrArr\sqrt{m^2(1+\frac{1}{m})}\gt\text{m}$$
+$$\leftrightarrow\sqrt{m^2(1+\frac{1}{m})}\gt\text{m}$$
 
-$$\lrArr m\sqrt{1+\frac{1}{m}}\gt m\cdot1$$
+$$\leftrightarrow m\sqrt{1+\frac{1}{m}}\gt m\cdot1$$
 
 $\text{Because }m\ge2\gt0\text{ , then }\displaystyle\frac{1}{m}\gt0\text{, which means }\sqrt{1+\frac{1}{m}}\gt1$
 
@@ -153,26 +151,26 @@ For each expression, describe a set of objects that is counted by the expression
 (a)
 $$ 26 * 8 * 10^7 $$
 
- Answer : 8 character string with excatly one letter and 7 digits.
+ Answer : 8 character string with excatly one lowercase letter and 7 digits.
  
- Reason : choosing letter out of 26 ways, choosing position out of 8, then 7 positions reamins with any digit.
+ Reason : choosing lowercase letter out of 26 ways, choosing its position out of 8 positions, then 7 remaining position with any digit from 0-9.
 
 (b) $$ 10^3(26+10)^5 \binom{8}{3} $$
-Answer : 8 character strings together with 3 digit only positions and 5 of any letter or digits.
+Answer : number of 8 character strings  with 3 digit only positions and 5 of any lowercase letter or digits positions.
 
-Reason : choosing the 3 on digit only position out of 8 and put any digits in those positions and fill remaining position with any letters or digits.
+Reason : choosing 3 digit only position out of 8 and put any digits in those positions and fill remaining position with any letters or digits. 8C3 is for choosing 3 positions for digits out of 8 positions.
 
 (c) 
 $$ (26 + 10)^8 - 26^8 $$
-Answer : 8 character strings that have at least one digit.
+Answer : 8 character lowercase string that have at least one digit.
 
-Reason : all letter or digit strings of length 8 and take out the strings made of letters only.
+Reason : Sum of all lowercase letters or digit strings of length 8 and take out the strings made of lowercase letters only.
 
 (d) 
 $$ 26^8 + 10^8 + 10^4 * 26^4 $$
-Answer : 8 character strings that all letters or all digits or have 4 digits and 4 letters positions.
+Answer : 8 character strings that are all lowercase letters or all digits or starts with 4 digits and ends with 4 lowercase letters posion.
 
-Reason : add all the counts
+Reason : add all the counts. $26^8$ is all lowercase letters only password, $10^8$ is all digits only passwords, and the last addend is for all that starts with 4 digits and ends with 4 lowercase letters posion.
 
 ---
 
