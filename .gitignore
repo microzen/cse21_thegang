@@ -4,3 +4,11 @@
 # ignore vim files
 *.swp
 *~
+
+# LaTex generated files
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.pdf
