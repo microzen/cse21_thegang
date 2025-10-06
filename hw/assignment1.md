@@ -226,12 +226,18 @@ How many different ways are there to arrange the letters in the string UNITEDSTA
 
 $$\frac{12!}{3!\,2!\,2!}$$
 
+Start with 12! permutations as if all letters were distinct. Then divide by 3! for the duplicated T's, by 2! for the E's, and by 2! for the S's to correct for overcounting.
+
 (b) (4 points)\
 How many different ways are there to color the 8 \emph{vertices} of a cube with 8 different colors?
 
 $$\frac{8!}{24}$$
 
+Start with 8! colorings. A cube has 6 choices for the top face, and for each top there are 4 rotations around the vertical axis, giving 6 x 4 = 24 equivalent views. Divide by 24 to count each arrangement once.
+
 (c) (4 points)\
 How many different ways are there to make a necklace with 8 different colored beads (two necklaces are the same if you can manipulate one to look like the other.)
 
 $$\frac{8!}{16}$$
+
+Start with 8! arrangements. Since a necklace can be rotated in 8 ways and flipped in 2 ways, divide by 16 to avoid overcounting.
