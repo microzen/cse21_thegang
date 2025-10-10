@@ -40,29 +40,29 @@ Comupute the number of *integer solutions* for each equation:
 ### Part a
 $$a_1 + a_2 + a_3 + a_4 + a_5 = 50$$
 
-$1 \leq a_1$
-$2 \leq a_2$
-$3 \leq a_3$
-$4 \leq a_4$
-$5 \leq a_5$
+- $1 \leq a_1$
+- $2 \leq a_2$
+- $3 \leq a_3$
+- $4 \leq a_4$
+- $5 \leq a_5$
 
 ### Part b
 $$a_1 + a_2 + a_3 + a_4 + a_5 = 50$$
 
-$0 \leq a_1$
-$0 \leq a_2$
-$0 \leq a_3$
-$0 \leq a_4$
-$10 \leq a_5 \leq 20$
+- $0 \leq a_1$
+- $0 \leq a_2$
+- $0 \leq a_3$
+- $0 \leq a_4$
+- $10 \leq a_5 \leq 20$
 
 ### Part c
 $$a_1 + a_2 + a_3 + a_4 + a_5 = 50$$
 
-$0 \leq a_1 \leq 15$
-$0 \leq a_2 \leq 15$
-$0 \leq a_3 \leq 15$
-$0 \leq a_4 \leq 15$
-$0 \leq a_5 \leq 15$
+- $0 \leq a_1 \leq 15$
+- $0 \leq a_2 \leq 15$
+- $0 \leq a_3 \leq 15$
+- $0 \leq a_4 \leq 15$
+- $0 \leq a_5 \leq 15$
 
 ## Question 4
 1. For integer $n \geq 0$, consider the identity: 
@@ -71,8 +71,9 @@ $$\binom{n+2}{3} = (1)(n) + (2)(n-1) + (3)(n-2)+...+(n-1)(2)+(n)(1)$$
 
 Prove the identity combinatorially by counting the same set in two different ways or by counting two different sets and establishing a bijection between them.
 (Hint: count the number of fixed binary strings based on the position of the middle "1")
-2. FOr integers $n > k \geq 0$, consider the identity: 
+
+2. For integers $n > k \geq 0$, consider the identity: 
 
 $$P(n,k) = P(n-1, k) + kP(n-1, k-1)$$
 
-Prove the identity combinatorially by counting the same set in 2 different ways or by counting two different sets and establishing a bijection between them
+Prove the identity combinatorially by counting the same set in 2 different ways or by counting two different sets and establishing a bijection between them.
