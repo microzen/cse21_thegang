@@ -125,7 +125,7 @@ $$\rightarrow \binom{54}{4} - 5\binom{38}{4} + 10\binom{22}{4} - 10\binom{6}{4} 
 
 $$\dbinom{n+2}{3} = (1)(n)+(2)(n-1)+(3)(n-2)\dots+(n-1)(2)+(n)(1)$$
 
-Prove the identity combinatorially by conting the same set in two different ways or by counting two different set and establishing a bijection between them.
+Prove the identity combinatorially by counting the same set in two different ways or by counting two different set and establishing a bijection between them.
 
 Solution:
 
@@ -133,17 +133,17 @@ LHS: $\dbinom{n+2}{3}$ equals to the number of way to choose 3 positions for 1's
 
 Call 3 positions of 1 a,b,c $(a\gt b\gt c)$
 
-Assume middle position, $b=m$, left position and right position of $m$ must be reserved. We got $2 \le m\le n + 1$ or $2 \le b\le n+1$. Also, $1\le a\le n-1, m+1\le c\le n+2$
+Assume middle position, $b=m$, left position and right position of $m$ must be reserved. We got $2 \le m\le n + 1$ or $2 \le b\le n+1$. Also, $1\le a\le m-1, m+1\le c\le n+2$
 
 For a fixed $b$, there are $(m-1)[(n+2)-m]$ choices:
 
 $$\sum_{m=2}^{n+1} (m-1)\left((n+2) -m \right)$$
 
-Let $x=m-1$, euqation becomes
+Let $x=m-1$, equation becomes
 
 $$\sum_{x=1}^{n}x(n+1-x)=(1)(n)+(2)(n-1)+\dots+(n)(1)$$
 
-$$\sum_{x=1}^{n}x(n+1-x)=RSH$$
+$$\sum_{x=1}^{n}x(n+1-x)=RHS$$
 
 Proved
 
@@ -154,3 +154,13 @@ $$P(n,k)=P(n-1,k)+kP(n-1,k-1)$$
 Prove the ideneity combinatorially by conting the same set in two different ways or by counting two different sets and establishing a bijection between them.
 
 Solution:
+LHS: $P(n,k)$ = number of k-length strings formed by distinct elements chosen from a set of n-elements.
+RHS: 
++ We start with $P(n-1, k)$ = k-length strings formed by distinct elements chosen from the same set of n elements but without element n (so it's a set of n-1 elements)
++ For $kP(n-1, k-1)$, this is the number of ways we can count k-length strings that definitely contains element n. There are k ways to pick a position for element n, and there are k - 1 positions msut be filled with different elements from remaining elements in the set of n elements, which is actually a set of n-1 elements now.
+
+RHS is $P(n-1,k)$ and $kP(n-1,k-1)$ combining together, forming the number of ways we can count k-length strings whether element n is present or not.
+
+Therefore, RHS is counting the same set as LHS.
+
+Proved.
