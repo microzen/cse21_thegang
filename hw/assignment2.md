@@ -116,3 +116,41 @@ $$\binom{5}{2} \binom{22}{4} = 10\binom{22}{4} $$
 $$\binom{5}{3} \binom{6}{4} = 10\binom{6}{4}$$
 
 $$\rightarrow \binom{54}{4} - 5\binom{38}{4} + 10\binom{22}{4} - 10\binom{6}{4} = 316,251 - 369,075 + 73,150 - 150 = 20,176 $$
+
+---
+
+### Question 4
+
+**a)**. $\forall n \ge 0$, consider the identity: 
+
+$$\dbinom{n+2}{3} = (1)(n)+(2)(n-1)+(3)(n-2)\dots+(n-1)(2)+(n)(1)$$
+
+Prove the identity combinatorially by conting the same set in two different ways or by counting two different set and establishing a bijection between them.
+
+Solution:
+
+LHS: $\dbinom{n+2}{3}$ equals to the number of way to choose 3 positions for 1's in a birary string length $n+2$.
+
+Call 3 positions of 1 a,b,c $(a\gt b\gt c)$
+
+Assume middle position, $b=m$, left position and right position of $m$ must be reserved. We got $2 \le m\le n + 1$ or $2 \le b\le n+1$. Also, $1\le a\le n-1, m+1\le c\le n+2$
+
+For a fixed $b$, there are $(m-1)[(n+2)-m]$ choices:
+
+$$\sum_{m=2}^{n+1} (m-1)\left((n+2) -m \right)$$
+
+Let $x=m-1$, euqation becomes
+
+$$\sum_{x=1}^{n}x(n+1-x)=(1)(n)+(2)(n-1)+\dots+(n)(1)$$
+
+$$\sum_{x=1}^{n}x(n+1-x)=RSH$$
+
+Proved
+
+**b).** $\forall n \ge 0$, consider the identity:
+
+$$P(n,k)=P(n-1,k)+kP(n-1,k-1)$$
+
+Prove the ideneity combinatorially by conting the same set in two different ways or by counting two different sets and establishing a bijection between them.
+
+Solution:
