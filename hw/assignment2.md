@@ -10,6 +10,44 @@ Due: October 13 2025
 
 ---
 
+### Question 1.a)
+Suppose you are giving out candy to trick-or-treaters. There is a group of 10 different trick-or-treaters that come to your door. You must give each of the 10 trick-or-treaters exctly one candy. You have an unlimited supply of 6 different candy bars: Snickers, Miky way, 3 Musketeers, Almond Joy, Twix, Kit Kat.
+
+**i).** How many different ways can you hand out one candy bar to each of the 10 trick-or treaters?
+
+Solution: we can treat this as 10 spaces(trick-or-treaters) and put the numbers(candy) 1 to 6 into there. Therefore, we got 6 to the power 10 way to do that.
+
+$$(6)^{10}$$
+
+**ii).** How many different ways can you hand out one candy bar to each of the 10 trick-or-treaters if you hand out at least one candy bar of each variety?
+
+Solutioin: 
+
+**iii).** How many different ways can you hand out one candy bar to each of the 10 trick-or-treaters if you hand out exaclty 6 Snickers?
+
+Solution: handing out excalty 6 Snickers means you have 6 fixed trick-or-treaters received Snickers, which is 10 pick 6. Also, the remains(4 trick-or-treaters) received random one from other 5 types of candy, which is 5 to the power 4.
+
+$$(10C6)(5^4)=\frac{(10!)}{6!(10-6)!}\times(5^4)$$
+
+---
+
+### Question 2
+Suppose you are traveling fron the bottom-left corner of a $10 \times 6$ grid of blocks and you wish to get the top-right corrner only using up and right movements:
+
+**a).** How many paths are there from the bottom-left corner to the top-right corner using right and up moves so that you go through at least one of the two blue dots (2,5) and (4,8) in the first picture?
+
+Solution: First, we could go from (1,1) to (2,5), then (2,5) to (6,10), and let it be Plan-A. Also, we could go from (1,1) to (4,8), then (4,8) to (6,10), and let it be Plan-B. Therefore, we got $A\cup B$, which equal to $|A| + |B| - |A \cap B|$. Now we know $|A| = \dbinom{5}{1}\dbinom{9}{4}$ and $|B| = \dbinom{10}{3}\dbinom{4}{2}$ and $|A \cap B| = \dbinom{5}{1}\dbinom{5}{2}\dbinom{4}{2}$, which is the steps that have to pass (2,5) and (4,8).
+
+$$\dbinom{5}{1}\dbinom{9}{4}+\dbinom{10}{3}\dbinom{4}{2}-\dbinom{5}{1}\dbinom{5}{2}\dbinom{4}{2}$$
+
+**b).** How many paths are there from the bottom-left to the top-right corner using right and up moves so that you avoid the green area in the second picture?
+
+Solution: First, all the moves have to avoid the moves pass (3,6) or (3,7). Let Plan-A become the moves that must pass (3,6), and Plan-B become the moves pass (3,7). We got $|\text{ All }| - (|A| + |B| - |A \cap B|)$. 
+
+$$\dbinom{14}{5}-\left(\dbinom{7}{2}\dbinom{7}{4} + \dbinom{8}{2}\dbinom{6}{3}-\dbinom{7}{2}\dbinom{1}{1}\dbinom{6}{3}\right)$$
+
+---
+
 ### Question 3
 Compute the number of integer solutions for each equation:
 (Include a justification)
