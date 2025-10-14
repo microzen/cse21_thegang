@@ -9,25 +9,59 @@ Contributors:
 Due: October 13 2025
 
 ---
+### Question 1
+(a) (Remember to explain your work.)
+Suppose you are giving out candy to trick-or-treaters. There is a group of 10 different trick-or-treaters that come to your door. You must give each of the 10 trick-or-treaters exactly one candy. You have an unlimited supply of 6 different candy bars: Snickers, Milky way, 3 Musketeers, Almond Joy, Twix, Kit Kat.
 
-### Question 1.a)
-Suppose you are giving out candy to trick-or-treaters. There is a group of 10 different trick-or-treaters that come to your door. You must give each of the 10 trick-or-treaters exctly one candy. You have an unlimited supply of 6 different candy bars: Snickers, Miky way, 3 Musketeers, Almond Joy, Twix, Kit Kat.
+i. How many different ways can you hand out one candy bar to each of the 10 trick-or-treaters?
 
-**i).** How many different ways can you hand out one candy bar to each of the 10 trick-or treaters?
+There are 6 choices for each person, so the total number of distributions is 
 
-Solution: we can treat this as 10 spaces(trick-or-treaters) and put the numbers(candy) 1 to 6 into there. Therefore, we got 6 to the power 10 way to do that.
+$$6^{10}$$
 
-$$(6)^{10}$$
+ii. How many different ways can you hand out one candy bar to each of the 10 trick-or-treaters if you hand out at least one candy bar of each variety?
 
-**ii).** How many different ways can you hand out one candy bar to each of the 10 trick-or-treaters if you hand out at least one candy bar of each variety?
+Count all possible candy distributions with no restrictions:
 
-Solutioin: 
+$$6^{10}$$
 
-**iii).** How many different ways can you hand out one candy bar to each of the 10 trick-or-treaters if you hand out exaclty 6 Snickers?
+Subtract the cases where at least one candy type is not used. Using the Inclusive-Exclusive Principle. The number of valid distributions is 
 
-Solution: handing out excalty 6 Snickers means you have 6 fixed trick-or-treaters received Snickers, which is 10 pick 6. Also, the remains(4 trick-or-treaters) received random one from other 5 types of candy, which is 5 to the power 4.
+$$\sum_{k=0}^{6} \binom{6}{k} (6-k)^{10} (-1)^k = \binom{6}{0}6^{10} - \binom{6}{1}5^{10} + \binom{6}{2}4^{10} - \binom{6}{3}3^{10} + \binom{6}{4}2^{10} - \binom{6}{5}1^{10}+\binom{6}{6}0^{10}$$
 
-$$(10C6)(5^4)=\frac{(10!)}{6!(10-6)!}\times(5^4)$$
+iii. How many different ways can you hand out one candy bar to each of the 10 trick-or-treaters if you hand out exactly 6 Snickers?
+
+Choose 6 out of the 10 trick-or-treaters to receive Snickers:
+
+$$\binom{10}{6}$$
+
+The remaining 4 each get one of the other 5 candy types:
+
+$$5^4$$
+
+Thus, the total is
+
+$$\binom{10}{6}5^4$$
+
+(b) (Remember to explain your work.) Suppose you are leaving out a bowl of 10 candies to trick-or-treaters. You have an unlimited supply of 6 different candy bars: Snickers, Milky way, 3 Musketeers. Almond Joy, Twix, Kit Kat.
+
+i. How many different ways can you select 10 candies for the bowl (choosing from your assortment of 6 different candies)?
+
+This is a stars and bars problem. Selecting 10 candies from 6 types. The total ways are
+
+$$\binom{10+6-1}{6-1}=\binom{15}{5}$$
+
+ii. How many different ways can you select 10 candies for the bowl so that there is at least one candy bar of each variety?
+
+Place one of each type first, then select the remaining 4 candies freely. The total ways are
+
+$$\binom{4+6-1}{6-1}=\binom{9}{5}$$
+
+iii. How many different ways can you select 10 candies for the bowl so that the bowl has exactly 6 Snickers?
+
+Fix 6 Snickers first, then select 4 more candies from the other 5 types. The total ways are
+
+$$\binom{4+5-1}{5-1}=\binom{8}{4}$$
 
 ---
 
@@ -128,6 +162,7 @@ $$\dbinom{n+2}{3} = (1)(n)+(2)(n-1)+(3)(n-2)\dots+(n-1)(2)+(n)(1)$$
 Prove the identity combinatorially by counting the same set in two different ways or by counting two different set and establishing a bijection between them.
 
 Solution:
+
 We want to prove that both sides of the equation counts the same set, which is the number of ways to choose 3 positions for 1's in a binary string length $n+2$
 
 LHS: $\dbinom{n+2}{3}$ equals to the number of ways to choose 3 positions for number "1" in a birary string length $n+2$.
@@ -167,6 +202,7 @@ Solution:
 We want to prove that both sides of the equation counts the number of ways we can choose k distinct balls chosen from a set of n balls to fit in k indistinguishable boxes which can only store 1 ball.
 
 LHS: $P(n,k)$ = number of ways we can choose k distinct balls chosen from a set of n balls to fit in k indistinguishable boxes which can only store 1 ball.
+
 RHS: 
 + We start with $P(n-1, k)$ = number of ways to fit distinct balls chosen from the same set of n balls but without ball n (so it's picking from n-1 balls) into k indistinguishable boxes which can only store 1 ball
 
