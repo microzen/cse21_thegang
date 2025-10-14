@@ -163,13 +163,21 @@ Prove the identity combinatorially by counting the same set in two different way
 
 Solution:
 
-LHS: $\dbinom{n+2}{3}$ equals to the number of way to choose 3 positions for 1's in a birary string length $n+2$.
+We want to prove that both sides of the equation counts the same set, which is the number of ways to choose 3 positions for 1's in a binary string length $n+2$
 
-Call 3 positions of 1 a,b,c $(a\gt b\gt c)$
+LHS: $\dbinom{n+2}{3}$ equals to the number of ways to choose 3 positions for number "1" in a birary string length $n+2$.
 
-Assume middle position, $b=m$, left position and right position of $m$ must be reserved. We got $2 \le m\le n + 1$ or $2 \le b\le n+1$. Also, $1\le a\le m-1, m+1\le c\le n+2$
+RHS: Assume it also counts the number of ways to choose 3 positions for number "1" in a binary string length $n+2$ 
 
-For a fixed $b$, there are $(m-1)[(n+2)-m]$ choices:
+Call 3 positions of number "1" a,b,c $(a\lt b\lt c)$
+
+Assume middle position, $b=m$, so left position (a) and right position (b) of $m$ must be reserved. We got $2 \le m\le n + 1$ or $2 \le b\le n+1$. Also, 
+
+$$1\le a\le m-1$$ 
+
+$$m+1\le c\le n+2$$
+
+For a fixed $b$, there are $(m-1)[(n+2)-m]$ choices to pick position a and c to form the binary strings:
 
 $$\sum_{m=2}^{n+1} (m-1)\left((n+2) -m \right)$$
 
@@ -179,21 +187,28 @@ $$\sum_{x=1}^{n}x(n+1-x)=(1)(n)+(2)(n-1)+\dots+(n)(1)$$
 
 $$\sum_{x=1}^{n}x(n+1-x)=RHS$$
 
+So both sides count the same set.
+
 Proved
 
 **b).** $\forall n \ge 0$, consider the identity:
 
 $$P(n,k)=P(n-1,k)+kP(n-1,k-1)$$
 
-Prove the ideneity combinatorially by conting the same set in two different ways or by counting two different sets and establishing a bijection between them.
+Prove the ideneity combinatorially by counting the same set in two different ways or by counting two different sets and establishing a bijection between them.
 
 Solution:
-LHS: $P(n,k)$ = number of k-length strings formed by distinct elements chosen from a set of n-elements.
-RHS: 
-+ We start with $P(n-1, k)$ = k-length strings formed by distinct elements chosen from the same set of n elements but without element n (so it's a set of n-1 elements)
-+ For $kP(n-1, k-1)$, this is the number of ways we can count k-length strings that definitely contains element n. There are k ways to pick a position for element n, and there are k - 1 positions msut be filled with different elements from remaining elements in the set of n elements, which is actually a set of n-1 elements now.
 
-RHS is $P(n-1,k)$ and $kP(n-1,k-1)$ combining together, forming the number of ways we can count k-length strings whether element n is present or not.
+We want to prove that both sides of the equation counts the number of ways we can choose k distinct balls chosen from a set of n balls to fit in k indistinguishable boxes which can only store 1 ball.
+
+LHS: $P(n,k)$ = number of ways we can choose k distinct balls chosen from a set of n balls to fit in k indistinguishable boxes which can only store 1 ball.
+
+RHS: 
++ We start with $P(n-1, k)$ = number of ways to fit distinct balls chosen from the same set of n balls but without ball n (so it's picking from n-1 balls) into k indistinguishable boxes which can only store 1 ball
+
++ For $kP(n-1, k-1)$, this is the number of ways to fit distinct balls chosen from the same set of n balls but must always include ball n (so the rest of balls is still picking from n-1 balls) into k indistinguishable boxes which can only store 1 ball
+
+RHS is $P(n-1,k)$ and $kP(n-1,k-1)$ combining together, forming the number of ways we can fit k distinct balls from a set of n balls into k boxes that can only store 1 ball whether ball n is present or not.
 
 Therefore, RHS is counting the same set as LHS.
 
