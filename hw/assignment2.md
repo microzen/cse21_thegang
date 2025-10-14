@@ -9,6 +9,58 @@ Contributors:
 Due: October 13 2025
 
 ---
+### Question 1
+(a) (Remember to explain your work.)
+Suppose you are giving out candy to trick-or-treaters. There is a group of 10 different trick-or-treaters that come to your door. You must give each of the 10 trick-or-treaters exacktly one candy. You have an unlimited supply of 6 different candy bars: Snickers, Milky way, 3 Musketeers, Almond Joy, Twix, Kit Kat.
+
+i. How many different ways can you hand out one candy bar to each of the 10 trick-or-treaters?
+
+There are 6 choices for each person, so the total number of distributions is 
+$$6^{10}$$
+
+ii. How many different ways can you hand out one candy bar to each of the 10 trick-or-treaters if you hand out at least one candy bar of each variety?
+
+Count all possible candy distributions with no restrictions:
+
+$$6^{10}$$
+
+Subtract the cases where at least one candy type is not used. Using the Inclusive-Exclusive Principle. The number of valid distribution is 
+
+$$\sum_{k=0}^{6} \binom{6}{k} (6-k)^{10} (-1)^k = \binom{6}{0}6^{10} - \binom{6}{1}5^{10} + \binom{6}{2}4^{10} - \binom{6}{3}3^{10} + \binom{6}{4}2^{10} - \binom{6}{5}1^{10}+\binom{6}{6}0^{10}$$
+
+iii. How many different ways can you hand out one candy bar to each of the 10 trick-or-treaters if you hand out exactly 6 Snickers?
+
+Choose 6 out of the 10 trick-or-treaters to receive Snickers:
+
+$$\binom{10}{6}$$
+
+The remaining 4 each get one of the other 5 candy types:
+
+$$5^4$$
+
+Thus, the total is
+
+$$\binom{10}{6}5^4$$
+
+(b) (Remember to explain your work.) Suppose you are leaving out a bowl of 10 candies to trick-ortreaters. You have an unlimited supply of 6 different candy bars: Snickers, Milky way, 3 Musketeers. Almond Joy, Twix, Kit Kat.
+
+i. How many different ways can you select 10 candies for the bowl (choosing from your assortment of 6 different candies)?
+
+This is a stars and bars problem. Selecting 10 candies from 6 types. The total ways are
+
+$$\binom{10+6-1}{6-1}=\binom{15}{5}$$
+
+ii. How many different ways can you select 10 candies for the bowl so that there is at least one candy bar of each variety?
+
+Place one of each type first, then select the remaining 4 candies freely. The total ways are
+
+$$\binom{4+6-1}{6-1}=\binom{9}{5}$$
+
+iii. How many different ways can you select 10 candies for the bowl so that the bowl has exactly 6 Snickers?
+
+Fix 6 Snickers first, then select 4 more candies from the other 5 types. The total ways are
+
+$$\binom{4+5-1}{5-1}=\binom{8}{4}$$
 
 ### Question 1.a)
 Suppose you are giving out candy to trick-or-treaters. There is a group of 10 different trick-or-treaters that come to your door. You must give each of the 10 trick-or-treaters exctly one candy. You have an unlimited supply of 6 different candy bars: Snickers, Miky way, 3 Musketeers, Almond Joy, Twix, Kit Kat.
