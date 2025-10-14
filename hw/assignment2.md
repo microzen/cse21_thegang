@@ -62,25 +62,6 @@ Fix 6 Snickers first, then select 4 more candies from the other 5 types. The tot
 
 $$\binom{4+5-1}{5-1}=\binom{8}{4}$$
 
-### Question 1.a)
-Suppose you are giving out candy to trick-or-treaters. There is a group of 10 different trick-or-treaters that come to your door. You must give each of the 10 trick-or-treaters exctly one candy. You have an unlimited supply of 6 different candy bars: Snickers, Miky way, 3 Musketeers, Almond Joy, Twix, Kit Kat.
-
-**i).** How many different ways can you hand out one candy bar to each of the 10 trick-or treaters?
-
-Solution: we can treat this as 10 spaces(trick-or-treaters) and put the numbers(candy) 1 to 6 into there. Therefore, we got 6 to the power 10 way to do that.
-
-$$(6)^{10}$$
-
-**ii).** How many different ways can you hand out one candy bar to each of the 10 trick-or-treaters if you hand out at least one candy bar of each variety?
-
-Solutioin: 
-
-**iii).** How many different ways can you hand out one candy bar to each of the 10 trick-or-treaters if you hand out exaclty 6 Snickers?
-
-Solution: handing out excalty 6 Snickers means you have 6 fixed trick-or-treaters received Snickers, which is 10 pick 6. Also, the remains(4 trick-or-treaters) received random one from other 5 types of candy, which is 5 to the power 4.
-
-$$(10C6)(5^4)=\frac{(10!)}{6!(10-6)!}\times(5^4)$$
-
 ---
 
 ### Question 2
