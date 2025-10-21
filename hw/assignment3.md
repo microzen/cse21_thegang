@@ -8,6 +8,16 @@ Contributors:
 
 Due: October 20 2025
 
+### Question 1
+Partnership Dominos is a game that involves 4 players and a Double-6 Domino set.
+
+A Double-6 Domino set is a set of 28 different tiles such that each tile hase two values (one one each side. The values are given by a number of pips or dots to signify the value.) There is one domino for each combination of values from 0 through 6 (including doubles). At the start of round, each of the 4 players (North, South, East, West) gets 7 tiles.
+
+**a).** What is the probability that North has the double-six tile (the tile with 6 pip on either side) in their opening hand?
+
+Explantion: North player has 7 chances to have his tiles in the opening hand. Since the probability to have double-six is $\frac{1}{28}$, thus, the probability of having double-six in the opening is $\frac{1}{28}+\frac{1}{28}+\dots+\frac{1}{28}$ seven times.
+
+$$\frac{7}{28} = \frac{1}{4}$$
 
 ---
 
