@@ -15,9 +15,39 @@ A Double-6 Domino set is a set of 28 different tiles such that each tile hase tw
 
 **a).** What is the probability that North has the double-six tile (the tile with 6 pip on either side) in their opening hand?
 
-Explantion: North player has 7 chances to have his tiles in the opening hand. Since the probability to have double-six is $\frac{1}{28}$, thus, the probability of having double-six in the opening is $\frac{1}{28}+\frac{1}{28}+\dots+\frac{1}{28}$ seven times.
+Explaination: North player has 7 chances to have his tiles in the opening hand. Since the probability to have double-six is $\frac{1}{28}$, thus, the probability of having double-six in the opening is $\frac{1}{28}+\frac{1}{28}+\dots+\frac{1}{28}$ seven times.
 
 $$\frac{7}{28} = \frac{1}{4}$$
+
+
+**b).** What is the probability that North has at least one double in their opening hand?
+
+Explaination: Base on the formual $P(E)=\frac{|E|}{|S|}$, let's set the $E$ as the outcome of no double in opening hand. Set $S$ as the outcome of having tiles.
+
+1. For E, chose 7 from the other $28 - 7$, which means the 7 pairs out of the total. Thus, $E = \dbinom{21}{7}$
+2. For S, chose 7 from 28, thus, $S= \dbinom{27}{7}$
+3. Now, the probability of least one double in opening hand is (1 - the probability of no double).
+
+$$P(E) = 1 - \frac{\text{the outcome of no double}}{\text{the outcome of 7 chance having tiles}}$$
+
+$$P(E)=1 - \frac{\dbinom{21}{7}}{\dbinom{28}{7}}$$
+
+
+**c).** What is the probability that North and South together hold all 7 tiles containing the value 6?
+
+Explaination: Total tiles North and South have is 14, so let set space as the outcome of having 14 tiles from 28.
+
+Now, the 7 tiles containing the value 6 is inclueded in the space. Let's set E as the is the remaning 7 tiles from 21.
+
+$$P(E)=\frac{\dbinom{7}{7}\dbinom{21}{7}}{\dbinom{28}{14}}$$
+
+
+**d).** Suppose that you are player North and you hold 4 of the 7 tiles with the number 6: (6,6),(6,4),(6,2),(6,1) (along with 3 other tiles without 6). What is the probability that your partner (player South) holds the remaining 3 tiles with the number 6: (6,5),(6,3),(6,0)?
+
+Solutation: Since North already recived 7 tiles, there are 21 tiles left. South drows 7 tiles form these 21. Among then, 3 must be the remaining 6 tiles, 4 could be random.
+
+$$P(E) = \frac{\dbinom{3}{3}\dbinom{18}{4}}{\dbinom{21}{7}}$$
+
 
 ---
 
