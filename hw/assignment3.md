@@ -98,7 +98,6 @@ $$E(X_i) = \frac{168}{28}=6$$
 Now we need to find $\sum_{i=1}^7 E(X_i)$
 
 $$E(X) = \sum_{i=1}^7 6 = 42$$
-$$$$
 
 ---
 
@@ -124,6 +123,9 @@ $$P(E) = \frac{1}{6^{10}}\sum_{i=0}^{6} (-1)^i \dbinom{6}{i}(6-i)^{10}$$
 
 Solution:
 1. Set |S| equal to all the outcome to distribute candies.
+2. Set |E| equal to the outcome of exactly 6 of the trick-or-treaters get a Snickers
+
+$$|E| = \dbinom{}{}$$
 
 **a) iii.** Explain why this is a uniform random sampling.
 
@@ -260,5 +262,5 @@ When k=4, E[payout] = 401 * 0.000295 = 0.1183\
 When k=5. E[payout] = 67000 * 0.000001737 = 0.1164
 
 $$\rightarrow \text{Total of E[Payout] = 0.1039 + 0.1461 + 0.1183 + 0.1164 = 0.4847}$$
-$$\rightarrow \text{E[Profit] = Total of E[Payout] - 1,  since ticket cost \$1}$$
+$$\rightarrow \text{E[Profit] = Total of E[Payout] - 1,  since ticket cost 1 dollar}$$
 $$\rightarrow \text{E[Profit] = 0.4847 - 1 = -0.5153}$$
