@@ -122,14 +122,16 @@ $$P(E) = \frac{1}{6^{10}}\sum_{i=0}^{6} (-1)^i \dbinom{6}{i}(6-i)^{10}$$
 **a) ii.** Using this sampling process, what is the probability that exactly 6 of the trick-or-treaters get a Snickers?
 
 Solution:
-1. Set |S| equal to all the outcome to distribute candies.
-2. Set |E| equal to the outcome of exactly 6 of the trick-or-treaters get a Snickers
+1. Set |S| equal to all the outcome to distribute candies, which is $6^{10}$.
+2. Set |E| equal to the outcome of exactly 6 of the trick-or-treaters get a Snickers, which is 6 position are fixed, and choose 5 candies for remaining 4 T-or-Ts. 
 
-$$|E| = \dbinom{}{}$$
+$$|E| = \dbinom{10}{6}(5^4)$$
+
+$$P(E) = \frac{\dbinom{10}{6}(5^4)}{6^{10}}$$
 
 **a) iii.** Explain why this is a uniform random sampling.
 
-Solution: 
+Solution: Because the process of choos each item in the sample space has an equal probability of being selected. Also, the selections are independent since a the probability given candy to T-or-T is $\frac{1}{6}$.
 
 ---
 
@@ -141,17 +143,52 @@ You roll a 6-sided die ten times in a row. If you roll a 1, you put a Snickers i
 
 **b) i.** Explain why this is not a uniform random sampling.
 
-Solution:
+Solution: Definition of uniform sampling: Every outcome has the same probability.
+
+Assume the trick-or-treaters getting candies from a bowl of 10 candies is a uniform random sampling. That means each type of candy has the same probability of being taken by the trick-or-treaters.
+
+We have 10 candies in that bowl using 6 types of candies. 10 is not divisible by 6, which means at least one type of candy has more candies in the bowl than another type of candy. We call them candy A and B, respectively.
+
+Let the number of candies A is x, and the number of candies B is y. 
+
+The difference between x and y is k ($k \in N, k \neq 0$).
+
+$$P(B) = \frac{y}{10}\text{ , while }P(A) = \frac{x}{10} = \frac{y + k}{10}$$
+
+We clearly see that $P(A) \neq P(B)$, which contrast with the initial theory. Therefore, this is not a uniform random sampling.
+
 
 **b) ii.** Which outcome (or outcomes) are the least likely to occur? (and why)
 
-Solution:
+Solution: Set X(S) equal to the $S = \{0,1,2,\dots 10\}$, which means that the set got 0, 1, 2, ... 10 in the bowls with only one type of candy. 
+
+Then, the probability of 
+
+$$P(X = 0) = \frac{\dbinom{14}{4}}{\dbinom{15}{5}}$$
+
+$$P(X = 1) = \frac{\dbinom{13}{4}}{\dbinom{15}{5}}
+$$
+
+$$\dots P(X = 10) = \frac{\dbinom{4}{4}}{\dbinom{15}{5}}
+$$
+
+Since $P(X=0) \gt P(X=1) \gt \dots \gt P(X=10)$
+
+The outcomes that any one of candy type all in the bowl are the least likely to occur due to it get the lowest probability occur.
 
 **b) iii.** (Note: this next part is not using the dice rolls as a sampling process.)
 
 If you used a uniform random sampling process for selecting 10 candies to put in the bowl, then what is the probability that you put at least one of each candy type?
 
 Solution:
+1. Set |S| equal to the all outcomes
+2. Let's fixed the 6 different types of candy. So we set |E| equal to the combination of $a_1+a_2+a_3+a_4+a_5+a_6 = 4 = n`$.
+
+$$|E| = \dbinom{n`+k-1}{k-1} = \dbinom{4+6-1}{6-1}$$
+
+$$|S| = \dbinom{10+6-1}{6-1}$$
+
+$$P(E)=\frac{\dbinom{9}{5}}{\dbinom{15}{5}}$$
 
 ### Question 3
 You are on a quest and you arrive at 3 trolls (Troll A, Troll B, Troll C)
