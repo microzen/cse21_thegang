@@ -25,7 +25,7 @@ $$\frac{7}{28} = \frac{1}{4}$$
 Solution: Base on the formual $P(E)=\frac{|E|}{|S|}$, let's set the $E$ as the outcome of no double in opening hand. Set $S$ as the outcome of having tiles.
 
 1. For E, chose 7 from the other $28 - 7$, which means the 7 pairs out of the total. Thus, $E = \dbinom{21}{7}$
-2. For S, chose 7 from 28, thus, $S= \dbinom{27}{7}$
+2. For S, chose 7 from 28, thus, $S= \dbinom{28}{7}$
 3. Now, the probability of least one double in opening hand is (1 - the probability of no double).
 
 $$P(E) = 1 - \frac{\text{the outcome of no double}}{\text{the outcome of 7 chance having tiles}}$$
