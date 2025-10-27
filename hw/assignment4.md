@@ -91,8 +91,10 @@ $$E(X_i) = \frac{\dbinom{13}{4}}{\dbinom{15}{5}}$$
 
 $$E(X) = (6)E(X_i) = (6)\frac{\dbinom{13}{4}}{\dbinom{15}{5}} \approx 1.429$$
 
+---
+
 ### Question 3
-a) What is the expected number of swaps in the first iteration of Bubble Sort (when i = 1)?
+**a)** What is the expected number of swaps in the first iteration of Bubble Sort (when i = 1)?
 
  Solution:
 Let E(x) = expected number of swaps in the first iteration of Bubble Sort.
@@ -113,9 +115,8 @@ $$E(x) = \displaystyle\sum_{r=0}^{n - 1}P(X=r)r$$
 
  So the expected number of swaps for an array of n elements is $\text{ }\displaystyle\frac{n - 1}{2}$
 
- b) A permutation is called a one-pass permutation if it is completely sorted after one pass of bubble
-sort (one iteration of the outer loop.) For example, [3,1,2,4,5] is a one-pass permutation of length
-5. 
+
+** b)** A permutation is called a one-pass permutation if it is completely sorted after one pass of bubble sort (one iteration of the outer loop.) For example, [3,1,2,4,5] is a one-pass permutation of length 5. 
 
 (Note: we will consider the increasing permutation, e.g. [1,2,3,4,5], as a one-pass permutation
 since it is technically sorted after one pass even though there are no swaps.)
