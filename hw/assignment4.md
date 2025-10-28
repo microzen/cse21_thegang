@@ -239,18 +239,18 @@ For each algorithm, compute the exact number of times the algorithm prints in te
 **(a)**
 ```python
 for i = 1 to n:
-   for i = 0 to n -1:
+   for j = i to n + 2:
          print(i, j)
 ```
 
 Values are i, i+1, i+2. for each fixed i, the inner loop prints 3 times. i goes from 1 to n, so there are n choices of 1. Each choice contributes 3 prints
 
-Answer : 3n
+Answer : $3n$
 
 **(b)** 
 ```python
 for i = 0 to n - 1:
-   for j = i to 2^i:
+   for j = 1 to 2^i:
       print(i, j)
 ```
 
