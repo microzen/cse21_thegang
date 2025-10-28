@@ -157,25 +157,25 @@ $P_k = (4/9) \cdot \sum_{i=0}^{k-1} (P_i \cdot P_{k-1-i})$
 
 Now, we calculate step-by-step:
 
-$$P_0 = 5/9$$
+$P_0 = 5/9$
 
-$$P_1 = (4/9) \cdot (P_0 \cdot P_0)$$
+$P_1 = (4/9) \cdot (P_0 \cdot P_0)$
 
-$$P_1 = (4/9) \cdot (5/9) \cdot (5/9) = 100/729$$
+$P_1 = (4/9) \cdot (5/9) \cdot (5/9) = 100/729$
 
-$$P_2 = (4/9) \cdot (P_1 \cdot P_0 + P_0 \cdot P_1) = (4/9) \cdot (2 \cdot P_0 \cdot P_1)$$
+$P_2 = (4/9) \cdot (P_1 \cdot P_0 + P_0 \cdot P_1) = (4/9) \cdot (2 \cdot P_0 \cdot P_1)$
 
-$$P_2 = (4/9) \cdot 2 \cdot (5/9) \cdot (100/729) = 4000/59049$$
+$P_2 = (4/9) \cdot 2 \cdot (5/9) \cdot (100/729) = 4000/59049$
 
-$$P_3 = (4/9) \cdot (P_2 \cdot P_0 + P_1 \cdot P_1 + P_0 \cdot P_2) = (4/9) \cdot (2 \cdot P_0 \cdot P_2 + P_1^2)$$
+$P_3 = (4/9) \cdot (P_2 \cdot P_0 + P_1 \cdot P_1 + P_0 \cdot P_2) = (4/9) \cdot (2 \cdot P_0 \cdot P_2 + P_1^2)$
 
-$$P_3 = (4/9) \cdot \left( 2 \cdot (5/9) \cdot (4000/59049) + (100/729)^2 \right)$$
+$P_3 = (4/9) \cdot \left( 2 \cdot (5/9) \cdot (4000/59049) + (100/729)^2 \right)$
 
-$$P_3 = (4/9) \cdot \left( 40000/531441 + 10000/531441 \right)$$
+$P_3 = (4/9) \cdot \left( 40000/531441 + 10000/531441 \right)$
 
-$$P_3 = (4/9) \cdot (50000 / 531441)$$
+$P_3 = (4/9) \cdot (50000 / 531441)$
 
-$$P_3 = 200000 / 4782969$$
+$P_3 = 200000 / 4782969$
 
 The probability of exactly 3 zombies is approximately $4.18\%$.
 
