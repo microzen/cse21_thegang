@@ -93,6 +93,90 @@ $$E(X) = (6)E(X_i) = (6)\frac{\dbinom{13}{4}}{\dbinom{15}{5}} \approx 1.429$$
 
 ---
 
+### Question 2
+A person (patient 0) is infected with the zombie virus.
+There is a 4/9 chance that an infected person turns into a zombie. Once a person turns into a zombie, it will infect 2 other people before it dies.
+
+**(a).** Including the first person who was infected, what is the expected number of infected people (zombie or not zombie)?
+
+Let E(I) be the expected total number of infected people (including Patient 0). We can find E(I) using the Law of Total Expectation by conditioning on Patient 0's outcome.
+
+1. Case 1: Patient 0 becomes a zombie (Prob = 4/9)The count is 1 (Patient 0) plus the expected infections from the 2 new people they infect.
+$E(I | \text{Zombie}) = 1 + E(I) + E(I) = 1 + 2E(I)$
+
+2. Case 2: Patient 0 does not become a zombie (Prob = 5/9)The count is 1 (Patient 0), and the process stops.
+$E(I | \text{Not Zombie}) = 1$
+
+Combining these cases:
+
+$$E(I) = (4/9) \cdot (1 + 2E(I)) + (5/9) \cdot (1)$$
+
+$$E(I) = 4/9 + (8/9)E(I) + 5/9$$
+
+$$E(I) = 1 + (8/9)E(I)$$
+
+$$(1/9)E(I) = 1$$
+
+$$E(I) = 9$$
+
+The expected number of infected people is 9.
+
+**(b).** What is the expected number of zombies?
+
+Let E(Z) be the expected total number of zombies.
+1. Case 1: Patient 0 becomes a zombie (Prob = 4/9). The count is 1 (Patient 0) plus the expected zombies from the 2 new people.
+$E(Z | \text{Zombie}) = 1 + E(Z) + E(Z) = 1 + 2E(Z)$
+
+2. Case 2: Patient 0 does not become a zombie (Prob = 5/9). The count is 0, and the process stops.
+$E(Z | \text{Not Zombie}) = 0$
+
+Combining these cases:
+
+$$E(Z) = (4/9) \cdot (1 + 2E(Z)) + (5/9) \cdot (0)$$
+
+$$E(Z) = 4/9 + (8/9)E(Z)$$
+
+$$(1/9)E(Z) = 4/9$$
+
+$$E(Z) = 4$$
+
+The expected number of zombies is 4.
+
+**(c).** What is the probability that there are exactly 3 zombies?
+
+Let $P_k$ be the probability that exactly $k$ zombies originate from one infected person. We need to find $P_3$.
+
+We can define $P_k$ recursively:
+- $P_0 = P(\text{Not Zombie}) = 5/9$
+- For $k \ge 1$, Patient 0 must become a zombie (Prob 4/9) and the 2 new infected people (A and B) must produce a combined $k-1$ zombies.
+$P_k = (4/9) \cdot \sum_{i=0}^{k-1} (P_i \cdot P_{k-1-i})$
+
+Now, we calculate step-by-step:
+
+$P_0 = 5/9$
+
+$P_1 = (4/9) \cdot (P_0 \cdot P_0)$
+
+$P_1 = (4/9) \cdot (5/9) \cdot (5/9) = 100/729$
+
+$P_2 = (4/9) \cdot (P_1 \cdot P_0 + P_0 \cdot P_1) = (4/9) \cdot (2 \cdot P_0 \cdot P_1)$
+
+$P_2 = (4/9) \cdot 2 \cdot (5/9) \cdot (100/729) = 4000/59049$
+
+$P_3 = (4/9) \cdot (P_2 \cdot P_0 + P_1 \cdot P_1 + P_0 \cdot P_2) = (4/9) \cdot (2 \cdot P_0 \cdot P_2 + P_1^2)$
+
+$P_3 = (4/9) \cdot \left( 2 \cdot (5/9) \cdot (4000/59049) + (100/729)^2 \right)$
+
+$P_3 = (4/9) \cdot \left( 40000/531441 + 10000/531441 \right)$
+
+$P_3 = (4/9) \cdot (50000 / 531441)$
+
+$P_3 = 200000 / 4782969$
+
+The probability of exactly 3 zombies is approximately $4.18\%$.
+
+---
+
 ### Question 3
 **a)** What is the expected number of swaps in the first iteration of Bubble Sort (when i = 1)?
 
