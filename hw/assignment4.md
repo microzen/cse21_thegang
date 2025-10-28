@@ -102,10 +102,12 @@ There is a 4/9 chance that an infected person turns into a zombie. Once a person
 Let E(I) be the expected total number of infected people (including Patient 0). We can find E(I) using the Law of Total Expectation by conditioning on Patient 0's outcome.
 
 1. Case 1: Patient 0 becomes a zombie (Prob = 4/9)The count is 1 (Patient 0) plus the expected infections from the 2 new people they infect.
-$E(I | \text{Zombie}) = 1 + E(I) + E(I) = 1 + 2E(I)$
+
+$$E(I | \text{Zombie}) = 1 + E(I) + E(I) = 1 + 2E(I)$$
 
 2. Case 2: Patient 0 does not become a zombie (Prob = 5/9)The count is 1 (Patient 0), and the process stops.
-$E(I | \text{Not Zombie}) = 1$
+
+$$E(I | \text{Not Zombie}) = 1$$
 
 Combining these cases:
 
@@ -125,10 +127,12 @@ The expected number of infected people is 9.
 
 Let E(Z) be the expected total number of zombies.
 1. Case 1: Patient 0 becomes a zombie (Prob = 4/9). The count is 1 (Patient 0) plus the expected zombies from the 2 new people.
-$E(Z | \text{Zombie}) = 1 + E(Z) + E(Z) = 1 + 2E(Z)$
+
+$$E(Z | \text{Zombie}) = 1 + E(Z) + E(Z) = 1 + 2E(Z)$$
 
 2. Case 2: Patient 0 does not become a zombie (Prob = 5/9). The count is 0, and the process stops.
-$E(Z | \text{Not Zombie}) = 0$
+
+$$E(Z | \text{Not Zombie}) = 0$$
 
 Combining these cases:
 
@@ -153,25 +157,25 @@ $P_k = (4/9) \cdot \sum_{i=0}^{k-1} (P_i \cdot P_{k-1-i})$
 
 Now, we calculate step-by-step:
 
-$P_0 = 5/9$
+$$P_0 = 5/9$$
 
-$P_1 = (4/9) \cdot (P_0 \cdot P_0)$
+$$P_1 = (4/9) \cdot (P_0 \cdot P_0)$$
 
-$P_1 = (4/9) \cdot (5/9) \cdot (5/9) = 100/729$
+$$P_1 = (4/9) \cdot (5/9) \cdot (5/9) = 100/729$$
 
-$P_2 = (4/9) \cdot (P_1 \cdot P_0 + P_0 \cdot P_1) = (4/9) \cdot (2 \cdot P_0 \cdot P_1)$
+$$P_2 = (4/9) \cdot (P_1 \cdot P_0 + P_0 \cdot P_1) = (4/9) \cdot (2 \cdot P_0 \cdot P_1)$$
 
-$P_2 = (4/9) \cdot 2 \cdot (5/9) \cdot (100/729) = 4000/59049$
+$$P_2 = (4/9) \cdot 2 \cdot (5/9) \cdot (100/729) = 4000/59049$$
 
-$P_3 = (4/9) \cdot (P_2 \cdot P_0 + P_1 \cdot P_1 + P_0 \cdot P_2) = (4/9) \cdot (2 \cdot P_0 \cdot P_2 + P_1^2)$
+$$P_3 = (4/9) \cdot (P_2 \cdot P_0 + P_1 \cdot P_1 + P_0 \cdot P_2) = (4/9) \cdot (2 \cdot P_0 \cdot P_2 + P_1^2)$$
 
-$P_3 = (4/9) \cdot \left( 2 \cdot (5/9) \cdot (4000/59049) + (100/729)^2 \right)$
+$$P_3 = (4/9) \cdot \left( 2 \cdot (5/9) \cdot (4000/59049) + (100/729)^2 \right)$$
 
-$P_3 = (4/9) \cdot \left( 40000/531441 + 10000/531441 \right)$
+$$P_3 = (4/9) \cdot \left( 40000/531441 + 10000/531441 \right)$$
 
-$P_3 = (4/9) \cdot (50000 / 531441)$
+$$P_3 = (4/9) \cdot (50000 / 531441)$$
 
-$P_3 = 200000 / 4782969$
+$$P_3 = 200000 / 4782969$$
 
 The probability of exactly 3 zombies is approximately $4.18\%$.
 
