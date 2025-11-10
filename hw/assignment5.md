@@ -6,7 +6,67 @@ Contributors:
 - Theo Lee, thl030@ucsd.edu
 - Woosik Kim, wok017@ucsd.edu
 
-Due: November 18 2025
+Due: November 10 2025
+
+---
+
+### Question 2 
+
+Consider the following sorting algorithm that takes a list of integers as an input and outputs a sorted list of those elements. (All you need to know about MERGE is that it takes two sorted lists of integers and returns a sorted list of all the integer combined. if the size of lists are j and k, then the runtime of MERGE is O(k + j).)
+
+```code
+QueueSort(a_1, ... a_n)
+    Initialize a queue Q of lists so that each element of the input is in a list all by itself.
+    Q = ([a_1], [a_2], ... ,[a_n])
+    while |Q| >= 2:
+        dequeue the first two lists from Q and MERGE the two lists together.
+        enqueue the result into Q
+    return Q
+```
+Consider the loop invariant:
+$$\text{After each iteration, every list in Q is sorted.}$$
+
+**a).** Prove this loop invariant using induction.
+
+**Base Case**: Before the iteration start, $Q = \{[a_1],[a_2],\dots [a_n]\}$ and every single element of list in Q is sorted. Thus, the loop invariant hold true at initialization.
+
+**Inductive Hypothesis**: Assume after k iteration, every list in Q is sorted such that $Q = {[L_1],[L_2], \dots [L_n]}$
+
+**Inductive Step**: Prove at k+1 iteration, every list in Q is sorted. 
+We known that the first list and second list are sorted list in Q after k iteration by IH. Therefore, at k+1 iteration, the first list and second list are merged correctly into a sorted list. Such that, every list in Q with out first list and secod list are sorted, the merged list are sorted. After enqueue the new merged into Q, every list in Q is sorted.
+
+Conclusion, All lists in Q is sorted at the end of k+1 iteration.
+
+
+**b).** Use the loop invariant to show that the algorithm is correct.
+
+Since all lists in Q is sorted at the end of k and k + 1 iterations, we can say it also true at the end of n iteration. Therefore, it holds true for all cases, the algrithm is correct.
+
+
+**c).** Use the runtime method we learned in class to show that this algorithm runs in $O(n^2)$.
+
+For all the $|Q| = n$, each time it will dequeue 2 lists and enqueue 1 list to the end of Q. Therefore, the while loop will run in $n - 1$ time.
+
+For all MERGE funtion, the worst case of MERGE functions is $O(k+j)$, which is given by the question; and it occure inside of the loop.
+
+Therefore, combine these 2 situation, the run time for this algorithm is $O(n^2)$
+
+
+**d).** Show that $O(n^2)$ is not a tigth bound by doing a more careful analysis.
+
+For this algorithm, each MERGE function takes $O(l + k)$ in run time. As the loop untill the end, it approchs $O(n\ log_2(n))$
+
+To shows what, the each MERGE in the first level, $Q = \{[1], [1], \dots [1]\}$ eash merged action costs $\frac{n}{2} \times O(2)$. It merges the (n/2) elements, that include lists all in 1 size, in Q.
+
+The second level, $Q = $Q = \{[1,2], [1,2], \dots [1,2]\}$ each costs $\frac{n}{4} \times O(4)$. It merges the (n/4) elements, that include lists all in 2 size, in Q.
+
+The thrid level, $Q = $Q = \{[1,2,3,4], [1,2,3,4], \dots [1,2,3,4]\}$ each costs $\frac{n}{8} \times O(8)$. It merges the (n/8) elements, that include lists all in 4 size, in Q.
+
+At n (last) level, it meger $\frac{n}/{2^k}$, which approch to 2 elements, that include lists all in n size, in Q.
+
+Therefore, we start with lists of size 1 and double the size until we reach $n = (1, 2, 4, 8, ..., n)$. This requires $log_2(n)$ passes. The total run time is $O(n\ log_2(n))$
+
+---
 
 ### Question 3
 
