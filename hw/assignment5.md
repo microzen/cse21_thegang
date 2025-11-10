@@ -65,7 +65,7 @@ $$\text{After each iteration, every list in Q is sorted.}$$
 **Inductive Hypothesis**: Assume after k iteration, every list in Q is sorted such that $Q = {[L_1],[L_2], \dots [L_n]}$
 
 **Inductive Step**: Prove at k+1 iteration, every list in Q is sorted. 
-We known that the first list and second list are sorted list in Q after k iteration by IH. Therefore, at k+1 iteration, the first list and second list are merged correctly into a sorted list. Such that, every list in Q with out first list and secod list are sorted, the merged list are sorted. After enqueue the new merged into Q, every list in Q is sorted.
+We known that the first list and second list are sorted list in Q after k iteration by IH. Therefore, at k+1 iteration, $[L_1]$ and $[L_2]$ is dequeue, and other remained lists are sorted. Such that, the first list and second list will be merged correctly into a sorted list. After enqueue the new merged list into Q, every list in Q is sorted.
 
 Conclusion, All lists in Q is sorted at the end of k+1 iteration.
 
@@ -90,11 +90,11 @@ For this algorithm, each MERGE function takes $O(l + k)$ in run time. As the loo
 
 To shows what, the each MERGE in the first level, $Q = \{[1], [1], \dots [1]\}$ eash merged action costs $\frac{n}{2} \times O(2)$. It merges the (n/2) elements, that include lists all in 1 size, in Q.
 
-The second level, $Q = $Q = \{[1,2], [1,2], \dots [1,2]\}$ each costs $\frac{n}{4} \times O(4)$. It merges the (n/4) elements, that include lists all in 2 size, in Q.
+The second level, $Q = \{[1,2], [1,2], \dots [1,2]\}$ each costs $\frac{n}{4} \times O(4)$. It merges the (n/4) elements, that include lists all in 2 size, in Q.
 
-The thrid level, $Q = $Q = \{[1,2,3,4], [1,2,3,4], \dots [1,2,3,4]\}$ each costs $\frac{n}{8} \times O(8)$. It merges the (n/8) elements, that include lists all in 4 size, in Q.
+The thrid level, $Q = \{[1,2,3,4], [1,2,3,4], \dots [1,2,3,4]\}$ each costs $\frac{n}{8} \times O(8)$. It merges the (n/8) elements, that include lists all in 4 size, in Q.
 
-At n (last) level, it meger $\frac{n}/{2^k}$, which approch to 2 elements, that include lists all in n size, in Q.
+At n (last) level, it meger $\frac{n}{2^k}$, which approch to 2 elements, that include lists all in n size, in Q.
 
 Therefore, we start with lists of size 1 and double the size until we reach $n = (1, 2, 4, 8, ..., n)$. This requires $log_2(n)$ passes. The total run time is $O(n\ log_2(n))$
 
