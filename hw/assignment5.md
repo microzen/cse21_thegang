@@ -34,6 +34,8 @@ FastModExp(b, x, n)
 
 (8 points) Prove the correctness of this algorithm (hint: Fix the variables b and n and induct on the variable x.)
 
+Solution:
+
 Proof by induction on $x$.
 Fix arbitrary integers $b > 1$ and $n > 1$.
 
