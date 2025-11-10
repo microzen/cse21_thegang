@@ -160,6 +160,8 @@ We showed the algorithm is correct for $x = 0$ (base case), and if it is correct
 
 Thus, by induction on $x$, $\text{FastModExp}(b, x, n)$ correctly returns $b^x \bmod n$ for all $x \geq 0$, with fixed $b > 1$ and $n > 1$.
 
+---
+
 ### Question 4
 For each situation below, first give the recurrence for the runtime of the algorithm (no
 explanation for this part.) Then use the Master Theorem, if possible, and give the values for a b and d and the O bound.
@@ -176,7 +178,7 @@ Master Theorem:
 
 a = 2, b = 5/2, d = 2
 
-$ a < b^d$
+$a < b^d$
 
 $T(n) = O(n^2)$
 
@@ -192,7 +194,7 @@ Master Theorem:
 
 a = 2, b = 4, d = 1/2
 
-$ a = b^d$
+$a = b^d$
 
 $T(n) = O(n^{0.5}\log{n})$
 
@@ -209,6 +211,6 @@ Master Theorem:
 
 a = 2, b = 4, d = 1.5
 
-$ a < b^d$
+$a < b^d$
 
 $T(n) = O(n^{1.5})$
