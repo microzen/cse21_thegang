@@ -60,7 +60,7 @@ $$\text{After each iteration, every list in Q is sorted.}$$
 
 **a).** Prove this loop invariant using induction.
 
-**Base Case**: Before the iteration start, $Q = \{[a_1],[a_2],\dots [a_n]\}$. Every single list has only one element and it is sorted in Q since only one element. Thus, the loop invariant hold true at initialization.
+**Base Case**: Before the iteration start, $Q = \{[a_1],[a_2],\dots [a_n]\}$. Every single list has only one element and it is sorted in Q since there is only one element. Thus, the loop invariant hold true at initialization.
 
 **Inductive Hypothesis**: Let $k \ge 1$. Assume after k iteration, every list in Q is sorted.
 
@@ -87,17 +87,33 @@ Therefore, combine these 2 situation, the run time for this algorithm is $O(n^2)
 
 **d).** Show that $O(n^2)$ is not a tight bound by doing a more careful analysis.
 
-For this algorithm, each MERGE function takes $O(l + k)$ in run time. As the loop until the end, it approaches $O(n\ log_2(n))$
+For this algorithm, each MERGE function takes $O(j + k)$ in run time. 
 
-To shows what, the each MERGE in the first level, $Q = \{[1], [1], \dots [1]\}$ each merged action costs $\frac{n}{2} \times O(2)$. It merges the (n/2) elements, that include lists all in 1 size, in Q.
+To shows that, we separate the MERGEs into levels.
 
-The second level, $Q = \{[1,2], [1,2], \dots [1,2]\}$ each costs $\frac{n}{4} \times O(4)$. It merges the (n/4) elements, that include lists all in 2 size, in Q.
+ The first level, $Q = \{[x], [x], \dots [x]\}$ has n lists of size 1.
 
-The third level, $Q = \{[1,2,3,4], [1,2,3,4], \dots [1,2,3,4]\}$ each costs $\frac{n}{8} \times O(8)$. It merges the (n/8) elements, that include lists all in 4 size, in Q.
+The second level, $Q = \{[x,y], [x,y], \dots [x,y]\}$ has $\displaystyle\frac{n}{2}$ lists of size 2.
 
-At n (last) level, it megers $\frac{n}{2^k}$, which approch to 2 elements, that include lists all in n size, in Q.
+The third level, $Q = \{[x,y,w,z], [x,y,w,z], \dots [x,y,w,z]\}$ each has $\displaystyle\frac{n}{4} $ lists of size 4.
 
-Therefore, we start with lists of size 1 and double the size until we reach $n = (1, 2, 4, 8, ..., n)$. This requires $log_2(n)$ passes. The total run time is $O(n\ log_2(n))$
+The k level has $frac{n}{2^k} = 1$ list of size n.
+
+We need to find k: $n, \displaystyle\frac{n}{2}, \displaystyle\frac{n}{4},...,\displaystyle\frac{n}{2^k}$
+
+We know that $\displaystyle\frac{n}{2^k} = 1$
+$$ n = 2^k$$
+$$ k = \log_2(n)$$
+
+So the algorithm runtime can be found by:
+
+O(number of layers)*O(time of merge)
+
+$= O(\log(n))\cdot O(n)$
+
+$= O(nlog(n))$, which is smaller than $O(n^2)$.
+
+Therefore, $O(n^2)$ is not a tight bound
 
 ---
 
