@@ -97,7 +97,7 @@ The second level, $Q = \{[x,y], [x,y], \dots [x,y]\}$ has $\displaystyle\frac{n}
 
 The third level, $Q = \{[x,y,w,z], [x,y,w,z], \dots [x,y,w,z]\}$ each has $\displaystyle\frac{n}{4} $ lists of size 4.
 
-The k level has 1 list of size n.
+The k level has $frac{n}{2^k} = 1$ list of size n.
 
 We need to find k: $n, \displaystyle\frac{n}{2}, \displaystyle\frac{n}{4},...,\displaystyle\frac{n}{2^k}$
 
@@ -111,7 +111,7 @@ O(number of layers)*O(time of merge)
 
 $= O(\log(n))\cdot O(n)$
 
-$= O(nlog(n))$, which is better than $O(n^2)$.
+$= O(nlog(n))$, which is smaller than $O(n^2)$.
 
 Therefore, $O(n^2)$ is not a tight bound
 
