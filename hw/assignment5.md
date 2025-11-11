@@ -19,7 +19,6 @@ $\textit{Factorial( n)}$\
 2.$\text{ for }$ $i$ = 1..$n$:\
 3.$\text{ fact = fact*}$ $i$\
 4.$\text{return fact}$
-
 (a) Consider the loop invariant:
 $\text{After t iterations, fact = t!}$\
 Prove that this loop invariant is correct by induction.
