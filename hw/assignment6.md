@@ -64,3 +64,70 @@ $$
     Q(n)&=1+\frac{\log_3(n)(\log_3(n)+1)}{2}\tag{Subsitiution}
 \end{align*}
 $$
+
+---
+
+### Question 3
+
+(a) Let $R(n)$ be the number of strings over the alphabet $\{2, 3, 4, 6\}$ that sum to $n$ when all digits are added together.
+
+For example, the string "2464" sums to 16.
+
+**(i)** Derive a recurrence relation for $R(n)$ and justify why it holds.
+
+**(ii)** Use the characteristic polynomial to determine the Big-Theta asymptotic growth of $R(n)$.
+
+Solution:
+
+Part (i): Recurrence Relation
+
+Let $R(n)$ = number of strings over alphabet $\{2, 3, 4, 6\}$ that sum to $n$
+
+Any string that sums to $n$ must end with one of the digits in $\{2, 3, 4, 6\}$.
+
+- If the string ends with 2, the remaining digits must sum to $n-2$. There are $R(n-2)$ such strings.
+- If the string ends with 3, the remaining digits must sum to $n-3$. There are $R(n-3)$ such strings.
+- Similarly for 4 and 6: $R(n-4)$ and $R(n-6)$ respectively.
+
+Thus, the recurrence relation is:
+
+$$
+R(n) = R(n-2) + R(n-3) + R(n-4) + R(n-6)
+$$
+
+Part (ii): Characteristic Polynomial
+
+Guess that $R(n) = Ar^n$ for some constants $A$ and $r$.
+
+Substituting into the recurrence:
+
+$$
+Ar^n = Ar^{n-2} + Ar^{n-3} + Ar^{n-4} + Ar^{n-6}
+$$
+
+Dividing both sides by $Ar^{n-6}$:
+
+$$
+r^6 = r^4 + r^3 + r^2 + 1
+$$
+
+Rearranging:
+
+$$
+r^6 - r^4 - r^3 - r^2 - 1 = 0
+$$
+
+Using an online polynomial solver, the roots are approximately:
+
+- $r_1 \approx 1.5129$ (dominant root)
+- $r_2 \approx -1.1787$
+- $r_3 \approx -0.5 - 0.866i$
+- $r_4 \approx -0.5 + 0.866i$
+- $r_5 \approx 0.3329 - 0.671i$
+- $r_6 \approx 0.3329 + 0.671i$
+
+Therefore:
+
+$$
+R(n) = \Theta(r_1^n) = \Theta(1.5129^n)
+$$
