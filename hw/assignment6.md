@@ -69,13 +69,13 @@ $$
 
 ### Question 3
 
-(a) Let $R(n)$ be the number of strings over the alphabet $\{2, 3, 4, 6\}$ that sum to $n$ when all digits are added together.
+**(a)** Let $R(n)$ be the number of strings over the alphabet $\{2, 3, 4, 6\}$ that sum to $n$ when all digits are added together.
 
 For example, the string "2464" sums to 16.
 
-**(i)** Derive a recurrence relation for $R(n)$ and justify why it holds.
+(i) Derive a recurrence relation for $R(n)$ and justify why it holds.
 
-**(ii)** Use the characteristic polynomial to determine the Big-Theta asymptotic growth of $R(n)$.
+(ii) Use the characteristic polynomial to determine the Big-Theta asymptotic growth of $R(n)$.
 
 Solution:
 
@@ -130,4 +130,82 @@ Therefore:
 
 $$
 R(n) = \Theta(r_1^n) = \Theta(1.5129^n)
+$$
+
+**(b)** Let $T(n)$ be the number of ternary (consist of the characters 0, 1, 2) strings of length $n$ that avoid the substring 01.
+
+(i) Derive a recurrence relation for $T(n)$ and justify why it holds.
+(Hint: use the expression $T_0(n)$ to signify the number of ternary strings of length $n$ that avoid 01 and start with 0.)
+
+(ii) Use the characteristic polynomial to determine the Big-Theta asymptotic growth of $T(n)$.
+
+Solution:
+
+Part (i): Recurrence Relation
+
+Let $T(n)$ = the number of ternary strings that avoid "01"
+
+A ternary string of length $n$ avoiding "01" must start with one of the characters: 0, 1, or 2.
+
+- If it starts with 1, then there are $T(n-1)$ ways to fill in the remaining $n-1$ entries with a 01-avoiding ternary string.
+- If it starts with 2, similarly there are $T(n-1)$ ways to fill in the remaining $n-1$ entries with a 01-avoiding ternary string.
+- If it starts with 0, then the next entry cannot be 1 (to avoid "01"). So there are two choices for what it could be: 0 or 2. Then there are $T(n-2)$ ways to fill in the remaining $n-2$ entries with a 01-avoiding ternary string.
+
+Thus, the recurrence relation is:
+
+$$
+T(n) = 2T(n-1) + 2T(n-2)
+$$
+
+Part (ii): Characteristic Polynomial
+
+Guess that $T(n) = Ar^n$ for some constants $A$ and $r$.
+
+Substituting into the recurrence:
+
+$$
+Ar^n = 2Ar^{n-1} + 2Ar^{n-2}
+$$
+
+Dividing both sides by $Ar^{n-2}$:
+
+$$
+r^2 = 2r + 2
+$$
+
+Rearranging:
+
+$$
+r^2 - 2r - 2 = 0
+$$
+
+By the quadratic formula:
+
+$$
+r = \frac{-(-2) \pm \sqrt{(-2)^2 - 4(1)(-2)}}{2(1)}
+$$
+
+$$
+r = \frac{2 \pm \sqrt{4 + 8}}{2} = \frac{2 \pm \sqrt{12}}{2}
+$$
+
+$$
+r = \frac{2 \pm 2\sqrt{3}}{2} = 1 \pm \sqrt{3}
+$$
+
+The two roots are:
+
+- $r_1 = 1 + \sqrt{3} \approx 2.732$ (dominant root)
+- $r_2 = 1 - \sqrt{3} \approx -0.732$
+
+Thus, the general solution is:
+
+$$
+T(n) = A(1+\sqrt{3})^n + B(1-\sqrt{3})^n
+$$
+
+Therefore:
+
+$$
+T(n) = \Theta((1+\sqrt{3})^n) = \Theta(2.732^n)
 $$
