@@ -198,14 +198,8 @@ The two roots are:
 - $r_1 = 1 + \sqrt{3} \approx 2.732$ (dominant root)
 - $r_2 = 1 - \sqrt{3} \approx -0.732$
 
-Thus, the general solution is:
-
-$$
-T(n) = A(1+\sqrt{3})^n + B(1-\sqrt{3})^n
-$$
-
 Therefore:
 
 $$
-T(n) = \Theta((1+\sqrt{3})^n) = \Theta(2.732^n)
+T(n) = \Theta(r_1^n) = \Theta((1+\sqrt{3})^n)
 $$
