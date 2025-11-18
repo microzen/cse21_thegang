@@ -203,3 +203,42 @@ Therefore:
 $$
 T(n) = \Theta(r_1^n) = \Theta((1+\sqrt{3})^n)
 $$
+
+
+Question 4: Consider the Sierpinski triangle fractal.
+
+Let S(0) be a white equilateral triangle of area 1. To obtain S(n), subdivide each white triangle of S(n - 1) into 4 smaller congruent triangles and darken the central one.
+
+a) Let E(n) denote the number of small white triangles remaining after n iterations. Formulate a recurrence relation for E(n).
+
+**Solution**: Each white triangle from S(n-1) gets replaced by 3 white triangles and 1 black triangle when we advance to S(n). So E(n) = 3E(n - 1) with E(0) = 1.
+
+b) Find a closed form of E(n)
+
+**Solution**: Close form for E(n) is $E(n) = 3^n$
+
+Base case: $E(0) = 1$ and $3^0 = 1$
+
+Inductive Step: Let k be an arbitrary integer, k > 0. Assume that $E(k-1) = 3^{k-1}$. Then,
+$$E(k) = 3E(k-1) = 3*3^ {k-1} = 3^k$$
+
+c) Let A(n) be the total area of the white triangles of the nth Sierpinski triangle (with A(0) = 1).
+Formulate a recurrence for A(n) and solve it for a closed form.
+
+**Solution**: 
+
+To get from S(n - 1) to S(n), each of the white triangle in E(n - 1) has its area divided into 4 equal triangles, 3 of which are white. In other words, from S(n - 1) to S(n), the area of a white triangle is reduced to only 3/4 of its area. Therefore, the total area of white triangle in S(n) is 3/4 of the total area of white triangle in S(n - 1).
+
+$A(n) = \frac{3}{4}A(n-1)$, given that A(0) = 1
+
+To get its closed form,
+
+$A(n)= A(0)\cdot\displaystyle\prod_{k=1}^{n}\frac{3}{4}=A(n)= \displaystyle\prod_{k=1}^{n}\frac{3}{4} = \displaystyle{(\frac{3}{4})}^n$
+
+d) As $n \rarr\infty$, what does A(n) approach?
+
+**Solution**: 
+
+
+
+$\lim\limits_{n\rarr\infty}A(n)=\lim\limits_{n\rarr\infty}{(\displaystyle\frac{3}{4})}^n= 0$ because $\displaystyle\frac{3}{4} < 1$
