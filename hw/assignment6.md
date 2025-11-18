@@ -96,7 +96,7 @@ When I substitute this into the equation, I get the answer :
 $$C(n) = \frac{(2n)!}{n!n!}$$
 
 (b) Use Stirling's approximation to show that $$C(n) \approx \frac{4^n}{\sqrt{\pi n}}$$
-*Stirling's formula :
+* Stirling's formula :
 $$n!\approx\sqrt{2\pi n}(\frac{n}{e})^n$$
 
 Apply this formula into the formula that we got from part(a) :
@@ -113,7 +113,7 @@ $$\frac{(\frac{2n}{e})^{2n}}{(\frac{n}{e})^{2n}} = 2^{2n} = 4^n$$
 So, now we get :
 $$C(n)\approx 4^n*\frac{\sqrt{4\pi n}}{2\pi n}$$
 
-*More simplify
+* More simplify
 $$C(n)\approx 4^n*\frac{2\sqrt{\pi n}}{2\pi n}$$
 Cancel 2's :
 $$ =4^n*\frac{\sqrt{\pi n}}{\pi n} = 4^n*\frac{1}{\sqrt{\pi n}}$$
@@ -260,16 +260,18 @@ $$
 T(n) = \Theta(r_1^n) = \Theta((1+\sqrt{3})^n)
 $$
 
+---
 
-Question 4: Consider the Sierpinski triangle fractal.
+### Question 4: 
+Consider the Sierpinski triangle fractal.
 
 Let S(0) be a white equilateral triangle of area 1. To obtain S(n), subdivide each white triangle of S(n - 1) into 4 smaller congruent triangles and darken the central one.
 
-a) Let E(n) denote the number of small white triangles remaining after n iterations. Formulate a recurrence relation for E(n).
+**a)** Let E(n) denote the number of small white triangles remaining after n iterations. Formulate a recurrence relation for E(n).
 
 **Solution**: Each white triangle from S(n-1) gets replaced by 3 white triangles and 1 black triangle when we advance to S(n). So E(n) = 3E(n - 1) with E(0) = 1.
 
-b) Find a closed form of E(n)
+**b)** Find a closed form of E(n)
 
 **Solution**: Close form for E(n) is $E(n) = 3^n$
 
@@ -278,7 +280,7 @@ Base case: $E(0) = 1$ and $3^0 = 1$
 Inductive Step: Let k be an arbitrary integer, k > 0. Assume that $E(k-1) = 3^{k-1}$. Then,
 $$E(k) = 3E(k-1) = 3*3^ {k-1} = 3^k$$
 
-c) Let A(n) be the total area of the white triangles of the nth Sierpinski triangle (with A(0) = 1).
+**c)** Let A(n) be the total area of the white triangles of the nth Sierpinski triangle (with A(0) = 1).
 Formulate a recurrence for A(n) and solve it for a closed form.
 
 **Solution**: 
@@ -291,10 +293,8 @@ To get its closed form,
 
 $A(n)= A(0)\cdot\displaystyle\prod_{k=1}^{n}\frac{3}{4}=A(n)= \displaystyle\prod_{k=1}^{n}\frac{3}{4} = \displaystyle{(\frac{3}{4})}^n$
 
-d) As $n \rarr\infty$, what does A(n) approach?
+**d)** As $n \rightarrow\infty$, what does A(n) approach?
 
 **Solution**: 
 
-
-
-$\lim\limits_{n\rarr\infty}A(n)=\lim\limits_{n\rarr\infty}{(\displaystyle\frac{3}{4})}^n= 0$ because $\displaystyle\frac{3}{4} < 1$
+$\lim\limits_{n\rightarrow\infty}A(n)=\lim\limits_{n\rightarrow\infty}{(\displaystyle\frac{3}{4})}^n= 0$ because $\displaystyle\frac{3}{4} < 1$
