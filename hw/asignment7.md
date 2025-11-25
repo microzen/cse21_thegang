@@ -45,6 +45,6 @@ $$0011 1010 1100$$
 
 Solution:
 
-To decode a string representing the position of a n = 15-bit string with k = 5 "1"s, we initialize output to be a 15-bit string of "0"s. Let r that position string in decimal. While k > 0, we find the largest x such that $\dbinom{x}{k}\le r$, then put a 1 in position x (counting from the right), then substract $\dbinom{x}{k}$ from r and substract 1 from k. Using this method, the string $001110101100_2 = 940_{10}$ will start with r = 940, n = 15, and k = 5. After decoding, we find out that the string represents the number 001001001000110. We treat the "1"s as bars and the "0"s as stars, and we can decode to the composition of {2,2,2,3,0,1}.
+To decode a string representing the position of a n = 15-bit string with k = 5 "1"s, we initialize output to be a 15-bit string of "0"s. Let r that position string in decimal. While k > 0, we find the largest x such that $\dbinom{x}{k}\le r$, then put a 1 in position x (counting from the right), then substract $\dbinom{x}{k}$ from r and substract 1 from k. Using this method, the string $001110101100_2 = 940_{10}$ will start with r = 940, n = 15, and k = 5. After decoding, we find out that the string represents the number 001001001000110. We treat the "1"s as bars and the "0"s as stars, and we can decode to the composition of {2,2,2,3,0,1}
 
 Final answer: {2,2,2,3,0,1}
