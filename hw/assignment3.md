@@ -8,6 +8,8 @@ Contributors:
 
 Due: October 20 2025
 
+<<<<<<< HEAD
+=======
 ### Question 1
 Partnership Dominos is a game that involves 4 players and a Double-6 Domino set.
 
@@ -242,6 +244,8 @@ P(That troll tells the truth to question 6 given that it answered the truth to t
 
 $$= P(A1|B)P(Honest) + P(A2|B)P(Half) + P(A3|B)P(Almost)$$
 $$= 0.788\cdot1 + 0.0246\cdot\frac{1}{2}+0.187\cdot\frac{3}{4} = 0.941$$
+=========
+>>>>>>>>> Temporary merge branch 2
 
 ---
 
@@ -299,5 +303,10 @@ When k=4, E[payout] = 401 * 0.000295 = 0.1183\
 When k=5. E[payout] = 67000 * 0.000001737 = 0.1164
 
 $$\rightarrow \text{Total of E[Payout] = 0.1039 + 0.1461 + 0.1183 + 0.1164 = 0.4847}$$
+<<<<<<<<< Temporary merge branch 1
 $$\rightarrow \text{E[Profit] = Total of E[Payout] - 1,  since ticket cost 1 dollar}$$
 $$\rightarrow \text{E[Profit] = 0.4847 - 1 = -0.5153}$$
+=========
+$$\rightarrow \text{E[Profit] = Total of E[Payout] - 1,  since ticket cost \$1}$$
+$$\rightarrow \text{E[Profit] = 0.4847 - 1 = -0.5153}$$
+>>>>>>>>> Temporary merge branch 2
