@@ -67,6 +67,62 @@ $$
 
 ---
 
+### Question 2
+
+Consider the recurrence $$C(n) = (4 - \frac{2}{n})C(n-1), C(0) = 1.$$
+
+(a) Use induction to show that $$C(n) = \frac{(2n)!}{n!n!}$$
+
+* Base Case n = 0 :
+$$\text{Left hand side: } C(0) = 1\\
+\text{Right hand side: } \frac{(2*0)!}{0!0!} = \frac{0!}{1*1} = 1\\
+\rightarrow \text{Base case holds.}$$
+
+* Inductive Step
+$$\text{Assume for some } n - 1 \ge 0:$$
+$$C(n-1) = \frac{(2n-2)!}{(n-1)!(n-1)!}$$
+ and we have to show $$C(n) = \frac{(2n)!}{n!n!}$$
+ * Use the recurrence: 
+ $$C(n) = (4-\frac{2}{n})C(n-1)$$
+ Simplify the coefficient :
+ $$4-\frac{2}{n} = \frac{4n-2}{n} = \frac{2(2n-1)}{n}$$
+ Then:
+ $$C(n) = \frac{2(2n-1)}{n}*\frac{(2n-2)!}{(n-1)!(n-1)!} = \frac{(2n)(2n-1)(2n-2)!}{n(n-1)!(n-1)!}$$
+ * Covert and simply
+ $$(2n)! = (2n)(2n-1)(2n-2)!$$
+ $$n!=n(n-1)!$$
+
+When I substitute this into the equation, I get the answer :
+$$C(n) = \frac{(2n)!}{n!n!}$$
+
+(b) Use Stirling's approximation to show that $$C(n) \approx \frac{4^n}{\sqrt{\pi n}}$$
+* Stirling's formula :
+$$n!\approx\sqrt{2\pi n}(\frac{n}{e})^n$$
+
+Apply this formula into the formula that we got from part(a) :
+$$(2n)!\approx\sqrt{4\pi n}(\frac{2n}{e})^{2n}$$
+$$n!\approx\sqrt{2\pi n}(\frac{n}{e})^n$$
+Now we get,
+$$C(n)\approx\frac{\sqrt{4\pi n}(\frac{2n}{e})^{2n}}{[\sqrt{2\pi n}(\frac{n}{e})^n]^2}$$
+
+* Simplify Denomintor
+$$C(n)\approx\frac{\sqrt{4\pi n}(\frac{2n}{e})^{2n}}{(2\pi n)(\frac{n}{e})^{2n}}$$
+
+* Cancel exponential terms
+$$\frac{(\frac{2n}{e})^{2n}}{(\frac{n}{e})^{2n}} = 2^{2n} = 4^n$$
+So, now we get :
+$$C(n)\approx 4^n*\frac{\sqrt{4\pi n}}{2\pi n}$$
+
+* More simplify
+$$C(n)\approx 4^n*\frac{2\sqrt{\pi n}}{2\pi n}$$
+Cancel 2's :
+$$ =4^n*\frac{\sqrt{\pi n}}{\pi n} = 4^n*\frac{1}{\sqrt{\pi n}}$$
+
+Then we get final answer:
+$$C(n)\approx\frac{4^n}{\sqrt{\pi n}}$$
+
+---
+
 ### Question 3
 
 **(a)** Let $R(n)$ be the number of strings over the alphabet $\{2, 3, 4, 6\}$ that sum to $n$ when all digits are added together.
@@ -203,42 +259,3 @@ Therefore:
 $$
 T(n) = \Theta(r_1^n) = \Theta((1+\sqrt{3})^n)
 $$
-
-
-Question 4: Consider the Sierpinski triangle fractal.
-
-Let S(0) be a white equilateral triangle of area 1. To obtain S(n), subdivide each white triangle of S(n - 1) into 4 smaller congruent triangles and darken the central one.
-
-a) Let E(n) denote the number of small white triangles remaining after n iterations. Formulate a recurrence relation for E(n).
-
-**Solution**: Each white triangle from S(n-1) gets replaced by 3 white triangles and 1 black triangle when we advance to S(n). So E(n) = 3E(n - 1) with E(0) = 1.
-
-b) Find a closed form of E(n)
-
-**Solution**: Close form for E(n) is $E(n) = 3^n$
-
-Base case: $E(0) = 1$ and $3^0 = 1$
-
-Inductive Step: Let k be an arbitrary integer, k > 0. Assume that $E(k-1) = 3^{k-1}$. Then,
-$$E(k) = 3E(k-1) = 3*3^ {k-1} = 3^k$$
-
-c) Let A(n) be the total area of the white triangles of the nth Sierpinski triangle (with A(0) = 1).
-Formulate a recurrence for A(n) and solve it for a closed form.
-
-**Solution**: 
-
-To get from S(n - 1) to S(n), each of the white triangle in E(n - 1) has its area divided into 4 equal triangles, 3 of which are white. In other words, from S(n - 1) to S(n), the area of a white triangle is reduced to only 3/4 of its area. Therefore, the total area of white triangle in S(n) is 3/4 of the total area of white triangle in S(n - 1).
-
-$A(n) = \frac{3}{4}A(n-1)$, given that A(0) = 1
-
-To get its closed form,
-
-$A(n)= A(0)\cdot\displaystyle\prod_{k=1}^{n}\frac{3}{4}=A(n)= \displaystyle\prod_{k=1}^{n}\frac{3}{4} = \displaystyle{(\frac{3}{4})}^n$
-
-d) As $n \rarr\infty$, what does A(n) approach?
-
-**Solution**: 
-
-
-
-$\lim\limits_{n\rarr\infty}A(n)=\lim\limits_{n\rarr\infty}{(\displaystyle\frac{3}{4})}^n= 0$ because $\displaystyle\frac{3}{4} < 1$
