@@ -214,6 +214,93 @@ Here is the frequency table for this particular image (there are a total of 64 h
 
 Therefore, $44+24+24+18+16+15+10+10+6+6+6+6+6+0+0+0=191$
 
+---
+
+### Question 3
+
+Consider the set of strings of length 10 over the alphabet with the 6 characters {0, 1, 2, ..., 5}.
+
+**(a)** Using a fixed length character-by-character encoding, what is the minimum number of bits required to encode each character and what is the number of bits required to encode the entire length 10 string?
+
+Solution:
+
+Bits per character:
+
+$$
+\lceil \log_2 6 \rceil = \lceil 2.585 \rceil = 3 \text{ bits}
+$$
+
+Total bits for length 10 string:
+
+$$
+3 \times 10 = 30 \text{ bits}
+$$
+
+**(b)** Develop a fixed length character-by-character encoding for this alphabet using the number of bits from the previous part and use it to encode/decode the following strings.
+
+Solution:
+
+Encoding Table
+
+| Character | Code |
+| :-------: | :--: |
+|     0     | 000 |
+|     1     | 001 |
+|     2     | 010 |
+|     3     | 011 |
+|     4     | 100 |
+|     5     | 101 |
+
+**(i)** Encode: 0123455012
+
+$$
+000\ 001\ 010\ 011\ 100\ 101\ 101\ 000\ 001\ 010
+$$
+
+**(ii)** Encode: 5233310005
+
+$$
+101\ 010\ 011\ 011\ 011\ 001\ 000\ 000\ 000\ 101
+$$
+
+**(iii)** Decode: 000 100 011 000 000 100 010 000 011 011
+
+$$
+0430042033
+$$
+
+**(c)** Using fixed length encoding, what is the minimum number of bits required to encode each length 10 string over the alphabet {0, 1, ..., 5}?
+
+Solution:
+
+Theoretical optimal bits:
+
+$$
+\lceil \log_2 6^{10} \rceil = \lceil 25.85 \rceil = 26 \text{ bits}
+$$
+
+**(d)** Develop a fixed length encoding for the arrangements using the number of bits from the previous part and use it to encode/decode the following strings: (You do not need to. how your work. You may use a calculator or online calculator.)
+
+**(i)** Encode: 0123455012
+
+$$
+00001001001110010111010000
+$$
+
+**(ii)** Encode: 5233310005
+
+$$
+11010001001001011101110101
+$$
+
+**(iii)** Decode: 00010001 10000001 00010000 01
+
+$$
+0242203321
+$$
+
+---
+
 ### Question 4
 
 An composition of a non-negative integer n into k parts is a k-tuple of non-negative integers that sum
