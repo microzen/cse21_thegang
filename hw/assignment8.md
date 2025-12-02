@@ -11,7 +11,7 @@ Due: December 2 2025
 
 ---
 
-## Question 3
+### Question 3
 
 A labeled 0-rooted tree with $n$ vertices is a rooted tree with each vertex labeled a different integer from 0 to n - 1 such that 0 is the root.
 
