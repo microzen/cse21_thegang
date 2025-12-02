@@ -73,13 +73,13 @@ $$
 
 Solution:
 
-Step 1: Convert to 7-tuple
+7-tuple:
 
 $$
 (5, 4, 0, 7, 3, 5, 0)
 $$
 
-Step 2: Determine parent relationships
+Parent relationships:
 
 | Vertex | Parent |
 | :----: | :----: |
@@ -91,7 +91,7 @@ Step 2: Determine parent relationships
 |   6   |   5   |
 |   7   |   0   |
 
-Step 3: Draw the tree
+Tree:
 
 ```
        0
