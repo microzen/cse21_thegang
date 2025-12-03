@@ -69,6 +69,58 @@ hypothesis, there is a hamiltonian path $(a_1, . . . , a_{n−1})$ in the corres
 
 (Hint: Consider the sequence of wins and losses of player n against $a_1,a_2,...,a_{n-1}$ and notice that the sequence starts with a loss and ends with a win.)
 
+### Question 2
+
+Dominos is a game played with collection of tiles that have a number of “pips” on each side of the domino. For this problem, we will consider “double-twelve” dominos meaning that the number of pips can range anywhere from 0 to 12 on each side.
+
+A “train” of dominos is a sequence of dominos such that two dominos next to each other “connect” with the same number of pips. You are given a collection of n dominos from the set of double-twelve dominos. You wish to determine if it is possible to make a train that uses all n dominos (each exactly once.)
+
+For example: the collection: { (3, 5), (4, 5), (3, 3), (5, 11), (10, 5), (10, 4) } can be arranged in a train that includes all dominos:(11, 5), (5, 10), (10, 4), (4, 5), (5, 3), (3, 3)
+
+On the other hand, the collection: { (3, 5), (4, 5), (3, 3), (5, 11), (10, 5) } cannot be arranged in a train that includes all dominos.
+
+**a)**. Model this problem as a graph problem in such a way that, given the collection of n dominos, build a graph G such that G has a Eulerian path if and only if the collection of n dominos can be arranged in a train that includes all dominos. (An Eulerian path is a path that goes through each edge exactly once.) (Your answer should be a description of a graph for a general collection of dominos. You must have a clear description of the vertices and a clear rule about when two vertices are connected by an edge and whether or not the edge is directed or undirected.)
+
+**Solution:** Since an Eulerian part is defined as a trail in a finite graph which visist every edge exacly once, the domaines themselfe must be the edges. 
+
+For vertices, $V=\{0,1,2,3,4,\dots ,12\}$ which is the number of pips on the faces of the dominoes.
+
+For edges, create an undirected edge between two vertices $u$ and $v$ for each dominoes $(u,v)$ in the collection. The other situation could be a double $(u,u)$, which was crated by a self-loop on vertex.
+
+The reason of this graphs works on Eulerian is :
+
+Suppose that the graph has an Eulerian path from $(v_1,\dots ,v_n)$. Then, for each edges travers by using the specific domino from the collection exactly onece. Since the edges in the path are connected by both normal vertices and double vertices, the corresponding dominos share the common number of pips at $v_i$ and $v_{i+1}$. Therefore, the sequence $(v_1,\dots ,v_n)$ of edges in the Eulerian path corresponds to a valid train that uses all dominos.
+
+**b)**. If there are n dominos, how many vertices and edges does your graph have (worst-case using Big-O notation)
+
+**Solution**: 
+
+In the worst case of vertices, the number of vertices is bounded by the number of pip valuse, which is the set $\{0,1,\dots ,12\}$. Therefore, there are $13$ vertices. $|V| \in O(1)$
+
+In the worst case of edges, since every domino must be connected by exactly one edge, the number of edges is exactly $n$. Therefore, $|E| \in O(n)$
+
+**c)**. Draw the graph for the input: {(6, 7), (10, 1), (3, 9), (12, 6), (9, 7), (7, 7), (5, 12), (7, 12), (3, 5), (3, 10), (1, 7), (6, 1)} (Try your best to draw your graph as a planar graph meaning that none of the edges cross.)
+
+![eg](./Eulerian_graph.png)
+
+**d)**. Identify a Eulerian path in the graph you built for part c and use that to construct a valid train.
+
+- Vertex 1 -> (6,7,10): **Degree 3, Odd**
+- Vertex 3 -> (5,9,10): **Degree 3, Odd** 
+- Vertex 5 -> (3,12): Degree 2, Even
+- Vertex 6 -> (1,7,12): **Degree 3, Odd** 
+- Vertex 7 -> (1,6,9,12) + (itself): Degree 6, Even
+- Vertex 9 -> (3,7): Degree 2, Even 
+- Vertex 10 -> (1,3): Degree 2, Even 
+- Vertex 12 -> (5,6,7): **Degree 3, Odd** 
+
+Since it is more than 2 even degrees, there is no Eulerian path exists.
+
+Valid train: (12,6)(6,7)(7,12)(12,5)(5,3)(3,9)(9,7)(7,7)(7,1)(1,10)(10,3)
+
+By removing the (6,1) which will case vertex 1 and 6 to be even degress. Now, it is a valid Eulerian path.
+
+---
 
 ### Question 3
 
