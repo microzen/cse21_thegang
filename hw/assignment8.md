@@ -11,6 +11,64 @@ Due: December 2 2025
 
 ---
 
+### Question 1
+
+In a round robin tournament with n players, each player plays each other player. In each
+game there is always a winner and a loser (no ties.) We can draw a graph to model a round robin
+tournament that has a vertex for each player and a directed edge from x to y if player x won the game
+against y.
+
+For example, if there were 4 players 1, 2, 3, 4, 5, and the results of the games are:
+
+1 wins against 2
+
+1 loses against 3
+
+1 wins against 4
+
+1 wins against 5
+
+2 loses against 3
+
+2 loses against 4
+
+2 wins against 5
+
+3 loses against 4
+
+3 loses against 5
+
+4 wins against 5
+
+Notice that this graph has a hamiltonian path: (3, 1, 4, 2, 5).
+Prove that for any integer $n \ge 1$, any tournament graph on n vertices has a hamiltonian path (a path
+that goes through each vertex exactly once.)
+
+(Fill in the blanks of the proof by induction:)
+
+**Solution:**
+
+**Base Case:** if the tournament has 1 player then the graph with only one vertex has a trivial hamiltonian path.
+
+**Inductive Step:** Let n be an arbitrary integer such that n > 1.
+
+Assume that any tournament with n − 1 players, the corresponding graph has a hamiltonian path.
+
+Consider an arbitrary tournament T with n players {1, . . . , n}
+
+Then if you consider the tournament T ′ involving only {1, . . . , n − 1}, then by the inductive
+hypothesis, there is a hamiltonian path $(a_1, . . . , a_{n−1})$ in the corresponding graph.
+
+(Want to show there is a hamiltonian path in the tournament T)
+
+**Case 1:** player n wins against player a1. Then T has the hamiltonian path **[ $(n,a_1,...,a_{n-1})$ ]**
+
+**Case 2:** player $a_{n-1}$ wins against player n. Then T has the hamiltonian path: **[ $(a_1,...,a_{n-1},n)$ ]**
+
+**Case 3:** player n loses against player $a_1$ and player n wins against player $a_{n-1}$. Then T has the hamilton path **[ $(a_1,...,a_{k-1},n,a_{k},...,a_{n-1})$ ]**
+
+(Hint: Consider the sequence of wins and losses of player n against $a_1,a_2,...,a_{n-1}$ and notice that the sequence starts with a loss and ends with a win.)
+
 ### Question 2
 
 Dominos is a game played with collection of tiles that have a number of “pips” on each side of the domino. For this problem, we will consider “double-twelve” dominos meaning that the number of pips can range anywhere from 0 to 12 on each side.
